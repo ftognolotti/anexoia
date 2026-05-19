@@ -109,7 +109,7 @@
   .info-box svg { flex-shrink:0; margin-top:1px; color:#3b82f6; }
   .info-box p { font-size:13px; color:#1e3a8a; font-weight:500; line-height:1.5; }
 
-  /* primer / segundo ciclo */
+  /* ── PRIMER / SEGUNDO CICLO ── */
   .ciclo-banner { border-radius:12px; padding:16px; margin-bottom:20px; }
   .ciclo-banner.pur { background:var(--pur-bg); border:1px solid var(--pur-border); }
   .ciclo-banner.tea { background:var(--tea-bg); border:1px solid var(--tea-border); }
@@ -192,6 +192,7 @@
     .panel.active { display:block !important; }
     .sub-panel { display:none !important; }
     .sub-panel.active { display:block !important; }
+    .sub-panel-pc { display:block !important; }
     .card { break-inside:avoid; }
     table { break-inside:avoid; }
     tr { break-inside:avoid; }
@@ -223,6 +224,7 @@
 
 <main>
 
+  <!-- SEARCH -->
   <div class="search-wrap no-print">
     <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
     <input type="text" id="search-input" placeholder="Buscar por materia, grado, concepto…" autocomplete="off" oninput="doSearch()" onfocus="doSearch()">
@@ -230,6 +232,7 @@
     <div class="search-results" id="search-results"></div>
   </div>
 
+  <!-- TAB NAV -->
   <nav class="tab-nav" role="tablist">
     <button class="tab-btn active" data-tab="mapa"    onclick="showTab('mapa',this)"   role="tab">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
@@ -253,6 +256,7 @@
     </button>
   </nav>
 
+  <!-- ═══════════════════════════════════════════════════════════ MAPA -->
   <div class="panel active" id="panel-mapa">
     <div class="mapa-hero">
       <h2>Mapa de progresión</h2>
@@ -308,6 +312,7 @@
     </div>
   </div>
 
+  <!-- ════════════════════════════════════════════════════ PRIMER CICLO -->
   <div class="panel" id="panel-primer">
     <div class="ciclo-banner pur">
       <div class="badges" style="margin-bottom:10px">
@@ -324,12 +329,13 @@
     </div>
 
     <div class="sub-nav no-print">
-      <button class="sub-btn-pc active-pc" onclick="showGradePC('pc-g1',this)">1° grado</button>
-      <button class="sub-btn-pc" onclick="showGradePC('pc-g2',this)">2° grado</button>
-      <button class="sub-btn-pc" onclick="showGradePC('pc-g3',this)">3° grado</button>
-      <button class="sub-btn-pc" onclick="showGradePC('pc-gtodos',this)">Todos los grados</button>
+      <button class="sub-btn-pc active-pc" onclick="showGradePC('g1',this)">1° grado</button>
+      <button class="sub-btn-pc" onclick="showGradePC('g2',this)">2° grado</button>
+      <button class="sub-btn-pc" onclick="showGradePC('g3',this)">3° grado</button>
+      <button class="sub-btn-pc" onclick="showGradePC('gtodos',this)">Todos los grados</button>
     </div>
 
+    <!-- 1° grado -->
     <div class="card sub-panel-pc active" id="pc-g1">
       <div class="card-body">
         <div class="campo">
@@ -349,6 +355,7 @@
       </div>
     </div>
 
+    <!-- 2° grado -->
     <div class="card sub-panel-pc" id="pc-g2">
       <div class="card-body">
         <div class="campo">
@@ -367,6 +374,7 @@
       </div>
     </div>
 
+    <!-- 3° grado -->
     <div class="card sub-panel-pc" id="pc-g3">
       <div class="card-body">
         <div class="campo">
@@ -401,12 +409,13 @@
             <li><span class="dot dot-pur"></span>Identifica el uso de IA en algunas situaciones de la vida cotidiana.</li>
             <li><span class="dot dot-pur"></span>Posibilidades y riesgos de la inteligencia artificial.</li>
             <li><span class="dot dot-pur"></span>Indagación de recursos digitales con IA como oportunidad para la experimentación y la reflexión crítica sobre estas tecnologías.</li>
-            <li><span class="dot dot-pur"></span>Oportunidades y desafíos que proponen los entornos virtuales y tecnologías digitales, especialmente en relación con el uso de IA in situaciones cotidianas.</li>
+            <li><span class="dot dot-pur"></span>Oportunidades y desafíos que proponen los entornos virtuales y tecnologías digitales, especialmente en relación con el uso de IA en situaciones cotidianas.</li>
           </ul>
         </div>
       </div>
     </div>
 
+    <!-- Todos los grados -->
     <div class="card sub-panel-pc" id="pc-gtodos">
       <div class="card-body">
         <div class="campo">
@@ -429,6 +438,7 @@
     </div>
   </div>
 
+  <!-- ═══════════════════════════════════════════════════ SEGUNDO CICLO -->
   <div class="panel" id="panel-segundo">
     <div class="ciclo-banner tea">
       <div class="badges" style="margin-bottom:10px">
@@ -453,6 +463,7 @@
       <button class="sub-btn" onclick="showGrade('gtodos',this)">Todos los grados</button>
     </div>
 
+    <!-- 4° grado -->
     <div class="card sub-panel active" id="seg-g4">
       <div class="card-body">
         <div class="campo"><div class="campo-h"><span class="badge badge-blu">Lengua</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
@@ -468,6 +479,7 @@
       </div>
     </div>
 
+    <!-- 5° grado -->
     <div class="card sub-panel" id="seg-g5">
       <div class="card-body">
         <div class="campo"><div class="campo-h"><span class="badge badge-blu">Lengua</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
@@ -483,6 +495,7 @@
       </div>
     </div>
 
+    <!-- 4° y 5° ED -->
     <div class="card sub-panel" id="seg-g45">
       <div class="card-body">
         <div class="campo"><div class="campo-h"><span class="badge badge-tea">Educación Digital (4° y 5°)</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
@@ -490,6 +503,7 @@
       </div>
     </div>
 
+    <!-- 6° grado -->
     <div class="card sub-panel" id="seg-g6">
       <div class="card-body">
         <div class="campo"><div class="campo-h"><span class="badge badge-blu">Lengua</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
@@ -505,6 +519,7 @@
       </div>
     </div>
 
+    <!-- 7° grado -->
     <div class="card sub-panel" id="seg-g7">
       <div class="card-body">
         <div class="campo"><div class="campo-h"><span class="badge badge-grn">Ciencias Naturales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
@@ -516,6 +531,7 @@
       </div>
     </div>
 
+    <!-- 6° y 7° ED -->
     <div class="card sub-panel" id="seg-g67">
       <div class="card-body">
         <div class="campo"><div class="campo-h"><span class="badge badge-tea">Educación Digital (6° y 7°)</span><span class="ej ej-cd">Ciudadanía Digital</span></div>
@@ -523,6 +539,7 @@
       </div>
     </div>
 
+    <!-- Todos los grados -->
     <div class="card sub-panel" id="seg-gtodos">
       <div class="card-body">
         <div class="campo"><div class="campo-h"><span class="badge badge-amb">Ciencias Sociales (todos los grados)</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
@@ -540,6 +557,7 @@
     </div>
   </div>
 
+  <!-- ══════════════════════════════════════════════════════ EJE ÉTICO -->
   <div class="panel" id="panel-etico">
     <p class="etico-intro">Franja transversal a todos los grados. Cada principio se trabaja en conversación áulica, no como contenido aislado.</p>
 
@@ -567,8 +585,9 @@
     </div>
   </div>
 
+  <!-- ══════════════════════════════════════════════════ RÚBRICA DOCENTE -->
   <div class="panel" id="panel-rubrica">
-    <p class="rubrica-intro">Instrumento orientador, no sumativo. Sirve para observar trayectorias y planificar interventions. Las habilidades están ancladas al DC 2024.</p>
+    <p class="rubrica-intro">Instrumento orientador, no sumativo. Sirve para observar trayectorias y planificar intervenciones. Las habilidades están ancladas al DC 2024.</p>
 
     <div class="sub-nav no-print">
       <button class="sub-btn-rub active-r1" onclick="showRubrica('r1',this)">Primer ciclo (1°–3°)</button>
@@ -620,37 +639,46 @@
 function showTab(id, btn) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('panel-' + id).classList.add('active');
-  btn.classList.add('active');
+  const panel = document.getElementById('panel-' + id);
+  if (panel) panel.classList.add('active');
+  if (btn) btn.classList.add('active');
+}
+
+// ── PRIMER CICLO GRADE NAV ───────────────────────────────────
+function showGradePC(id, btn) {
+  document.querySelectorAll('#panel-primer .sub-panel-pc').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('#panel-primer .sub-btn-pc').forEach(b => b.classList.remove('active-pc'));
+  const target = document.getElementById('pc-' + id);
+  if (target) target.classList.add('active');
+  if (btn) btn.classList.add('active-pc');
 }
 
 // ── SEGUNDO CICLO GRADE NAV ──────────────────────────────────
 function showGrade(id, btn) {
   document.querySelectorAll('#panel-segundo .sub-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.sub-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('seg-' + id).classList.add('active');
-  btn.classList.add('active');
+  document.querySelectorAll('#panel-segundo .sub-btn').forEach(b => b.classList.remove('active'));
+  const target = document.getElementById('seg-' + id);
+  if (target) target.classList.add('active');
+  if (btn) btn.classList.add('active');
 }
 
 // ── RÚBRICA CYCLE NAV ────────────────────────────────────────
 function showRubrica(id, btn) {
   document.querySelectorAll('#panel-rubrica .sub-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.sub-btn-rub').forEach(b => b.classList.remove('active-r1', 'active-r2'));
-  document.getElementById('rub-' + id).classList.add('active');
-  btn.classList.add('active-' + id);
+  const target = document.getElementById('rub-' + id);
+  if (target) target.classList.add('active');
+  if (btn) btn.classList.add('active-' + id);
 }
 
 // ── SEARCH ───────────────────────────────────────────────────
 const ENTRIES = [
-  {tab:'primer',grade:null,subject:'Lengua / Ed. Artística / Cs. Naturales',gradeLabel:'1° y 2° grado',keywords:'reconocer ia dispositivos aula hogar asistente voz cuentos interactivos imágenes generadas lector voz comprensión lectora lengua artística naturales primer ciclo'},
-  {tab:'primer',grade:null,subject:'Explorar e interactuar (Lengua / Matemática / Cs. Naturales)',gradeLabel:'3° grado',keywords:'crear cuentos asistentes conversacionales reescribir imágenes ilustrar clasificar objetos preguntas críticas por qué ia dijo matemática naturales'},
   {tab:'primer',grade:'g1',subject:'Tecnologías, Diseño y Programación',gradeLabel:'1° grado',keywords:'inteligencia artificial aplicaciones utilidades experimenta reconocimiento dibujos patrones reflexión procesos tecnológicos impacto vida personas recursos digitales experimentación'},
   {tab:'primer',grade:'g2',subject:'Tecnologías, Diseño y Programación',gradeLabel:'2° grado',keywords:'automatización inteligencia artificial trabajo tareas repetitivas chatbots robots industriales reflexión procesos automatizados recursos digitales experimentación'},
   {tab:'primer',grade:'g3',subject:'Conocimiento del Mundo',gradeLabel:'3° grado',keywords:'recursos digitales ia inteligencia artificial búsqueda información otras épocas experimentación reflexión crítica'},
   {tab:'primer',grade:'g3',subject:'Teatro / Educación Artística',gradeLabel:'3° grado',keywords:'recursos digitales ia inteligencia artificial experimentación reflexión crítica teatro artística'},
   {tab:'primer',grade:'g3',subject:'Tecnologías, Diseño y Programación',gradeLabel:'3° grado',keywords:'máquinas sistemas robots aprendizaje automático ia inteligencia artificial posibilidades riesgos características básicas cotidiana oportunidades desafíos entornos virtuales redes'},
   {tab:'primer',grade:'gtodos',subject:'Educación Digital',gradeLabel:'Todos los grados',keywords:'navegar entornos digitales ia inteligencia artificial experimentación reflexión información recursos digitales'},
-  {tab:'segundo',grade:'g4',subject:'Lengua',gradeLabel:'4° grado',keywords:'busca palabras sitios web ia motores búsqueda lecturas guiadas confiabilidad fuentes ia generativa veracidad falsedad'},
   {tab:'segundo',grade:'g4',subject:'Ciencias Naturales',gradeLabel:'4° grado',keywords:'materiales implantes prótesis tecnológicas ia calidad de vida'},
   {tab:'segundo',grade:'g4',subject:'Ciencias Sociales',gradeLabel:'4° grado',keywords:'accede indaga información digital herramientas sistemas ia'},
   {tab:'segundo',grade:'g4',subject:'Educación Artística',gradeLabel:'4° grado',keywords:'creación resignificación imágenes ia prompts avatares artes visuales autores compositores música'},
@@ -731,32 +759,30 @@ function doSearch(){
   box.classList.add('show');
 }
 
-function navigateTo(tab, grade){
+function navigateTo(tab, grade) {
+  // 1. Activar el panel de pestaña correcto
   const tabBtn = document.querySelector(`.tab-btn[data-tab="${tab}"]`);
-  if(tabBtn) showTab(tab, tabBtn);
-  if(grade && tab === 'primer'){
-    const gradeBtn = document.querySelector(`.sub-btn-pc[onclick*="${grade}"]`);
-    if(gradeBtn) showGradePC(grade, gradeBtn);
+  showTab(tab, tabBtn);
+
+  // 2. Si hay grado, activar el sub-panel correspondiente
+  if (grade) {
+    if (tab === 'primer') {
+      const btn = document.querySelector(`#panel-primer .sub-btn-pc[onclick*="'${grade}'"]`);
+      showGradePC(grade, btn);
+    } else if (tab === 'segundo') {
+      const btn = document.querySelector(`#panel-segundo .sub-btn[onclick*="'${grade}'"]`);
+      showGrade(grade, btn);
+    } else if (tab === 'rubrica') {
+      const btn = document.querySelector(`#panel-rubrica .sub-btn-rub[onclick*="'${grade}'"]`);
+      showRubrica(grade, btn);
+    }
   }
-  if(grade && tab === 'segundo'){
-    const gradeBtn = document.querySelector(`.sub-btn[onclick*="${grade}"]`);
-    if(gradeBtn) showGrade(grade, gradeBtn);
-  }
-  if(grade && tab === 'rubrica'){
-    const rubBtn = document.querySelector(`.sub-btn-rub[onclick*="${grade}"]`);
-    if(rubBtn) showRubrica(grade, rubBtn);
-  }
+
+  // 3. Cerrar búsqueda y subir al top
   document.getElementById('search-results').classList.remove('show');
   document.getElementById('search-input').value = '';
   document.getElementById('search-clear').style.display = 'none';
-  window.scrollTo({top:0, behavior:'smooth'});
-}
-
-function showGradePC(id, btn){
-  document.querySelectorAll('.sub-panel-pc').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.sub-btn-pc').forEach(b => { b.classList.remove('active-pc'); });
-  document.getElementById('pc-' + id).classList.add('active');
-  btn.classList.add('active-pc');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function clearSearch(){
