@@ -1,961 +1,804 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anexo Curricular de IA - GCBA</title>
-    <style>
-        :root {
-            --pur-bg: #f5f3ff; --pur-text: #6d28d9; --pur-border: #ddd6fe;
-            --tea-bg: #f0fdfa; --tea-text: #0f766e; --tea-border: #ccfbf1;
-            --blu-bg: #eff6ff; --blu-text: #1d4ed8; --blu-border: #bfdbfe;
-            --grn-bg: #ecfdf5; --grn-text: #047857; --grn-border: #a7f3d0;
-            --amb-bg: #fffbeb; --amb-text: #b45309; --amb-border: #fde68a;
-            --cor-bg: #fff5f5; --cor-text: #c53030; --cor-border: #fed7d7;
-            --slate-700: #334155; --slate-900: #0f172a;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anexo curricular de inteligencia artificial · DC Primario GCBA 2024</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --pur-bg:#EEEDFE; --pur-text:#3C3489; --pur-border:#AFA9EC;
+    --tea-bg:#E1F5EE; --tea-text:#085041; --tea-border:#5DCAA5;
+    --blu-bg:#E6F1FB; --blu-text:#0C447C; --blu-border:#A8CCF0;
+    --amb-bg:#FAEEDA; --amb-text:#633806; --amb-border:#E5C988;
+    --cor-bg:#FAECE7; --cor-text:#712B13; --cor-border:#E5A98C;
+    --grn-bg:#EAF3DE; --grn-text:#27500A; --grn-border:#9CCC65;
+    --radius:10px; --shadow:0 1px 4px rgba(0,0,0,.08);
+    font-family:'Archivo',sans-serif;
+  }
+  body { background:#f8fafc; color:#1e293b; font-size:14px; line-height:1.55; }
 
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #f8fafc;
-            color: var(--slate-700);
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
+  /* ── LAYOUT ── */
+  .container { max-width:960px; margin:0 auto; padding:0 16px; }
+  header { background:#fff; border-bottom:1px solid #e2e8f0; position:sticky; top:0; z-index:100; }
+  header .inner { padding:14px 16px; max-width:960px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; gap:10px; }
+  header .meta { font-size:11px; font-weight:600; color:#64748b; text-transform:uppercase; letter-spacing:.06em; margin-bottom:4px; }
+  header h1 { font-size:22px; font-weight:800; color:#0f172a; }
+  header .sub { font-size:14px; color:#475569; margin-top:2px; }
+  .badges { display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
+  .badge { font-size:11px; font-weight:600; padding:4px 10px; border-radius:999px; border:1px solid; }
+  .badge-pur { background:var(--pur-bg); color:var(--pur-text); border-color:var(--pur-border); }
+  .badge-tea { background:var(--tea-bg); color:var(--tea-text); border-color:var(--tea-border); }
+  .badge-blu { background:var(--blu-bg); color:var(--blu-text); border-color:var(--blu-border); }
+  .badge-amb { background:var(--amb-bg); color:var(--amb-text); border-color:var(--amb-border); }
+  .badge-cor { background:var(--cor-bg); color:var(--cor-text); border-color:var(--cor-border); }
+  .badge-grn { background:var(--grn-bg); color:var(--grn-text); border-color:var(--grn-border); }
+  .badge-slate { background:#f1f5f9; color:#475569; border-color:#e2e8f0; }
+  .btn-print { font-size:11px; font-weight:500; color:#64748b; border:1px solid #e2e8f0; background:#fff; border-radius:8px; padding:5px 10px; cursor:pointer; display:flex; align-items:center; gap:5px; }
+  .btn-print:hover { background:#f8fafc; }
+  main { padding:20px 16px 40px; max-width:960px; margin:0 auto; }
 
-        header {
-            background: white;
-            padding: 30px 20px;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            margin-bottom: 24px;
-            border: 1px solid #e2e8f0;
-        }
+  /* ── SEARCH ── */
+  .search-wrap { position:relative; max-width:480px; margin-bottom:16px; }
+  .search-wrap input { width:100%; padding:8px 34px 8px 32px; border:1px solid #e2e8f0; border-radius:10px; font-family:inherit; font-size:13px; background:#fff; color:#1e293b; outline:none; }
+  .search-wrap input:focus { border-color:#94a3b8; box-shadow:0 0 0 2px rgba(148,163,184,.2); }
+  .search-icon { position:absolute; left:10px; top:50%; transform:translateY(-50%); width:14px; height:14px; color:#94a3b8; pointer-events:none; }
+  .search-clear { position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer; font-size:16px; color:#94a3b8; background:none; border:none; line-height:1; display:none; }
+  .search-results { display:none; position:absolute; left:0; right:0; top:calc(100% + 6px); background:#fff; border:1px solid #e2e8f0; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,.1); z-index:200; overflow:hidden; max-height:340px; overflow-y:auto; }
+  .search-results.show { display:block; }
+  .search-hint { padding:8px 12px 6px; font-size:10px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:.06em; }
+  .search-item { display:flex; align-items:flex-start; justify-content:space-between; gap:8px; padding:8px 12px; cursor:pointer; border-top:1px solid #f1f5f9; text-align:left; width:100%; background:none; border-left:none; border-right:none; border-bottom:none; font-family:inherit; }
+  .search-item:hover { background:#f8fafc; }
+  .search-item-body { flex:1; }
+  .search-item-meta { display:flex; align-items:center; gap:5px; margin-bottom:3px; flex-wrap:wrap; }
+  .search-item-subject { font-size:12px; font-weight:600; color:#1e293b; }
+  .search-item-preview { font-size:11px; color:#64748b; line-height:1.4; }
+  .search-empty { padding:16px 12px; text-align:center; font-size:13px; color:#94a3b8; }
+  mark { background:#fef08a; color:#854d0e; border-radius:2px; padding:0 1px; }
 
-        .inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+  /* ── TABS ── */
+  .tab-nav { display:flex; flex-wrap:wrap; gap:4px; background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:5px; margin-bottom:24px; box-shadow:var(--shadow); }
+  .tab-btn { display:flex; align-items:center; gap:6px; font-family:inherit; font-size:13px; font-weight:500; padding:8px 14px; border:none; border-radius:8px; cursor:pointer; background:none; color:#64748b; white-space:nowrap; }
+  .tab-btn.active { font-weight:600; }
+  .tab-btn[data-tab="mapa"].active     { background:#eff6ff; color:#1d4ed8; }
+  .tab-btn[data-tab="primer"].active   { background:var(--pur-bg); color:var(--pur-text); }
+  .tab-btn[data-tab="segundo"].active  { background:var(--tea-bg); color:var(--tea-text); }
+  .tab-btn[data-tab="etico"].active    { background:#fffbeb; color:#92400e; }
+  .tab-btn[data-tab="rubrica"].active  { background:#f1f5f9; color:#334155; }
+  .panel { display:none; }
+  .panel.active { display:block; }
 
-        header h1 {
-            margin: 8px 0;
-            color: var(--slate-900);
-            font-size: 2.2rem;
-        }
+  /* ── CARDS ── */
+  .card { background:#fff; border:1px solid #e2e8f0; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; }
+  .card-header { padding:16px 18px; border-bottom:1px solid #f1f5f9; background:#fafafa; }
+  .card-body { padding:18px; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .grid4 { display:grid; grid-template-columns:repeat(4, 1fr); gap:14px; }
+  @media(max-width:640px) { .grid2 { grid-template-columns:1fr; } .grid4 { grid-template-columns:1fr 1fr; } }
 
-        .meta { font-weight: 600; color: #64748b; margin: 0; text-transform: uppercase; font-size: 0.85rem; }
-        .sub { font-size: 1.2rem; color: #475569; margin: 0; }
+  /* ── MAPA ── */
+  .mapa-hero { text-align:center; margin-bottom:28px; }
+  .mapa-hero h2 { font-size:22px; font-weight:800; color:#1e293b; margin-bottom:6px; }
+  .mapa-hero p { font-size:14px; color:#475569; }
+  .cycle-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:28px; }
+  @media(max-width:580px) { .cycle-grid { grid-template-columns:1fr; } }
+  .cycle-card { border-radius:var(--radius); overflow:hidden; border:1px solid; box-shadow:var(--shadow); }
+  .cycle-card.pur { border-color:var(--pur-border); }
+  .cycle-card.tea { border-color:var(--tea-border); }
+  .cycle-card-head { padding:12px 16px; font-size:15px; font-weight:700; display:flex; align-items:center; gap:8px; }
+  .cycle-card.pur .cycle-card-head { background:var(--pur-bg); color:var(--pur-text); }
+  .cycle-card.tea .cycle-card-head { background:var(--tea-bg); color:var(--tea-text); }
+  .cycle-num { width:26px; height:26px; border-radius:50%; background:#fff; font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .cycle-card.pur .cycle-num { color:var(--pur-text); }
+  .cycle-card.tea .cycle-num { color:var(--tea-text); }
+  .cycle-card-body { padding:14px 16px; background:#fff; }
+  .cycle-row { padding:10px 0; }
+  .cycle-row + .cycle-row { border-top:1px solid #f1f5f9; }
+  .cycle-row .glabel { font-size:11px; font-weight:600; padding:2px 8px; border-radius:999px; border:1px solid; display:inline-block; margin-bottom:4px; }
+  .cycle-row h4 { font-size:13px; font-weight:700; color:#1e293b; margin-bottom:3px; }
+  .cycle-row p { font-size:12px; color:#475569; }
+  .ejes-section { margin-top:24px; padding-top:24px; border-top:1px solid #e2e8f0; }
+  .ejes-title { text-align:center; font-size:18px; font-weight:700; color:#1e293b; margin-bottom:16px; }
+  .eje-card { background:#fff; border:1px solid #e2e8f0; border-radius:var(--radius); padding:16px; box-shadow:var(--shadow); }
+  .eje-icon { width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:10px; font-size:18px; }
+  .eje-card h4 { font-size:13px; font-weight:700; color:#1e293b; margin-bottom:5px; }
+  .eje-card p { font-size:12px; color:#475569; }
+  .info-box { display:flex; align-items:flex-start; gap:12px; background:#eff6ff; border:1px solid #bfdbfe; border-radius:12px; padding:14px 16px; margin-top:20px; }
+  .info-box svg { flex-shrink:0; margin-top:1px; color:#3b82f6; }
+  .info-box p { font-size:13px; color:#1e3a8a; font-weight:500; line-height:1.5; }
 
-        .badges { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-        .badge {
-            padding: 6px 14px;
-            border-radius: 9999px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid transparent;
-        }
-        .badge-pur { background: var(--pur-bg); color: var(--pur-text); border-color: var(--pur-border); }
-        .badge-tea { background: var(--tea-bg); color: var(--tea-text); border-color: var(--tea-border); }
-        .badge-blu { background: var(--blu-bg); color: var(--blu-text); border-color: var(--blu-border); }
-        .badge-grn { background: var(--grn-bg); color: var(--grn-text); border-color: var(--grn-border); }
-        .badge-amb { background: var(--amb-bg); color: var(--amb-text); border-color: var(--amb-border); }
-        .badge-cor { background: var(--cor-bg); color: var(--cor-text); border-color: var(--cor-border); }
+  /* ── PRIMER / SEGUNDO CICLO ── */
+  .ciclo-banner { border-radius:12px; padding:16px; margin-bottom:20px; }
+  .ciclo-banner.pur { background:var(--pur-bg); border:1px solid var(--pur-border); }
+  .ciclo-banner.tea { background:var(--tea-bg); border:1px solid var(--tea-border); }
+  .ciclo-banner .badges { margin-bottom:10px; }
+  .ciclo-banner p { font-size:13px; font-weight:500; line-height:1.55; }
+  .ciclo-banner.pur p { color:var(--pur-text); }
+  .ciclo-banner.tea p { color:var(--tea-text); }
+  .ejes-dig { background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:8px 12px; display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin-bottom:16px; }
+  .ejes-dig-label { font-size:11px; font-weight:600; color:#475569; }
+  .ej { font-size:11px; font-weight:500; padding:2px 8px; border-radius:999px; }
+  .ej-am { background:var(--blu-bg); color:var(--blu-text); }
+  .ej-cd { background:var(--cor-bg); color:var(--cor-text); }
+  .ej-pc { background:var(--grn-bg); color:var(--grn-text); }
+  .sub-nav { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
+  .sub-btn { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#64748b; }
+  .sub-btn.active { background:var(--tea-bg); color:var(--tea-text); border-color:var(--tea-border); }
+  .sub-btn-rub { font-family:inherit; font-size:12px; font-weight:500; padding:6px 14px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#64748b; }
+  .sub-btn-rub.active-r1 { background:var(--pur-bg); color:var(--pur-text); border-color:var(--pur-border); }
+  .sub-btn-rub.active-r2 { background:var(--tea-bg); color:var(--tea-text); border-color:var(--tea-border); }
+  .sub-btn-pc { font-family:inherit; font-size:12px; font-weight:500; padding:6px 12px; border:1px solid #e2e8f0; border-radius:8px; cursor:pointer; background:#fff; color:#64748b; }
+  .sub-btn-pc.active-pc { background:var(--pur-bg); color:var(--pur-text); border-color:var(--pur-border); }
+  .sub-panel { display:none; }
+  .sub-panel.active { display:block; }
+  .sub-panel-pc { display:none; }
+  .sub-panel-pc.active { display:block; }
+  .campo { margin-bottom:16px; }
+  .campo:last-child { margin-bottom:0; }
+  .campo-h { display:flex; align-items:center; gap:6px; margin-bottom:8px; padding-bottom:6px; border-bottom:1px solid #f1f5f9; flex-wrap:wrap; }
+  .dot-list { list-style:none; display:flex; flex-direction:column; gap:7px; }
+  .dot-list li { display:flex; align-items:flex-start; gap:8px; font-size:12px; color:#334155; line-height:1.5; }
+  .dot { width:6px; height:6px; border-radius:50%; background:var(--tea-border); flex-shrink:0; margin-top:5px; }
+  .dot-pur { background:var(--pur-border); }
+  .warn-box { display:flex; align-items:flex-start; gap:12px; background:#fffbeb; border:1px solid #fde68a; border-radius:12px; padding:14px 16px; margin-top:20px; }
+  .warn-box p { font-size:13px; color:#92400e; font-weight:500; line-height:1.5; }
 
-        .btn-print {
-            background: var(--slate-900);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: background 0.2s;
-        }
-        .btn-print:hover { background: #1e293b; }
+  /* skill badges in 1er ciclo */
+  .area-chips { display:flex; flex-wrap:wrap; gap:5px; margin-top:12px; padding-top:12px; border-top:1px solid #f1f5f9; }
+  .area-label { font-size:10px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:.06em; width:100%; }
+  .tool-chips { display:flex; flex-wrap:wrap; gap:5px; }
+  .chip { font-size:11px; color:#475569; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:6px; padding:3px 8px; }
 
-        /* Buscador básico */
-        .search-wrap {
-            max-width: 1100px;
-            margin: 0 auto 24px auto;
-            display: flex;
-            gap: 8px;
-        }
-        .search-input {
-            flex: 1;
-            padding: 12px 16px;
-            border-radius: 8px;
-            border: 1px solid #cbd5e1;
-            font-size: 1rem;
-        }
-        .search-clear {
-            background: #e2e8f0;
-            border: none;
-            width: 44px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
+  /* ── EJE ÉTICO ── */
+  .etico-intro { font-size:13px; color:#64748b; margin-bottom:18px; }
+  .principio { display:flex; align-items:flex-start; gap:0; border:1px solid #e2e8f0; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); margin-bottom:10px; }
+  .principio-icon { width:52px; min-width:52px; display:flex; align-items:center; justify-content:center; font-size:18px; padding:12px 0; flex-shrink:0; }
+  .principio-body { padding:12px 14px; flex:1; }
+  .principio-head { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:6px; margin-bottom:4px; }
+  .principio-title { font-size:13px; font-weight:600; color:#1e293b; }
+  .principio-desc { font-size:12px; color:#475569; line-height:1.5; }
+  .preguntas-box { background:#f1f5f9; border:1px solid #e2e8f0; border-radius:12px; padding:16px; margin-top:20px; }
+  .preguntas-box h3 { font-size:14px; font-weight:700; color:#1e293b; margin-bottom:12px; }
+  .preguntas-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  @media(max-width:580px) { .preguntas-grid { grid-template-columns:1fr; } }
+  .pregunta-item { display:flex; align-items:flex-start; gap:8px; background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:10px 12px; }
+  .pregunta-num { width:24px; height:24px; border-radius:50%; background:#f1f5f9; color:#475569; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .pregunta-item p { font-size:12px; font-weight:500; color:#334155; }
 
-        /* Navegación por pestañas */
-        .tab-nav {
-            max-width: 1100px;
-            margin: 0 auto 24px auto;
-            display: flex;
-            gap: 8px;
-            border-bottom: 2px solid #e2e8f0;
-            overflow-x: auto;
-        }
-        .tab-btn {
-            background: none;
-            border: none;
-            padding: 12px 20px;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #64748b;
-            cursor: pointer;
-            border-bottom: 3px solid transparent;
-            margin-bottom: -2px;
-            white-space: nowrap;
-        }
-        .tab-btn.active {
-            color: #2563eb;
-            border-bottom-color: #2563eb;
-        }
+  /* ── RÚBRICA ── */
+  .rubrica-intro { font-size:13px; color:#64748b; margin-bottom:16px; }
+  .rubrica-table { width:100%; border-collapse:collapse; min-width:580px; font-size:12px; }
+  .rubrica-table th { padding:10px 12px; font-weight:600; color:#334155; background:#f8fafc; border-bottom:2px solid #e2e8f0; text-align:left; }
+  .rubrica-table td { padding:9px 12px; border-bottom:1px solid #f1f5f9; color:#475569; vertical-align:top; }
+  .rubrica-table tr:last-child td { border-bottom:none; }
+  .rubrica-table td:first-child { font-weight:600; color:#1e293b; }
+  .rubrica-table td:last-child { background:#f0fdf4; color:#14532d; font-weight:500; }
+  .rub-head-pur { background:var(--pur-bg); padding:10px 16px; display:flex; align-items:center; gap:8px; font-size:14px; font-weight:700; color:var(--pur-text); border-bottom:1px solid var(--pur-border); }
+  .rub-head-tea { background:var(--tea-bg); padding:10px 16px; display:flex; align-items:center; gap:8px; font-size:14px; font-weight:700; color:var(--tea-text); border-bottom:1px solid var(--tea-border); }
+  .table-wrap { overflow-x:auto; }
+  .nota-ped { background:#f1f5f9; border:1px solid #e2e8f0; border-radius:10px; padding:12px 14px; margin-top:16px; }
+  .nota-ped .slabel { font-size:10px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:.06em; margin-bottom:4px; }
+  .nota-ped p { font-size:12px; color:#64748b; }
 
-        /* Paneles */
-        .panel { display: none; max-width: 1100px; margin: 0 auto; }
-        .panel.active { display: block; }
+  /* ── PRINT ── */
+  @media print {
+    @page { margin:14mm 12mm; size:A4; }
+    * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+    header { position:static !important; box-shadow:none !important; }
+    .no-print, .tab-nav, .search-wrap, .sub-nav { display:none !important; }
+    .panel { display:none !important; }
+    .panel.active { display:block !important; }
+    .sub-panel { display:none !important; }
+    .sub-panel.active { display:block !important; }
+    .sub-panel-pc { display:block !important; }
+    .card { break-inside:avoid; }
+    table { break-inside:avoid; }
+    tr { break-inside:avoid; }
+  }
 
-        .mapa-hero, .ciclo-banner {
-            background: #ffffff;
-            padding: 24px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            margin-bottom: 24px;
-        }
-        .mapa-hero h2 { margin-top: 0; color: var(--slate-900); }
-
-        /* Grillas y Tarjetas */
-        .cycle-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-            margin-bottom: 30px;
-        }
-        .cycle-card {
-            background: white;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
-        }
-        .cycle-card-head {
-            padding: 16px 20px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .cycle-card.pur .cycle-card-head { background: var(--pur-bg); color: var(--pur-text); border-bottom: 1px solid var(--pur-border); }
-        .cycle-card.tea .cycle-card-head { background: var(--tea-bg); color: var(--tea-text); border-bottom: 1px solid var(--tea-border); }
-        .cycle-num {
-            background: white;
-            width: 28px;
-            height: 28px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .cycle-card-body { padding: 20px; display: flex; flex-direction: column; gap: 20px; }
-        .cycle-row { border-bottom: 1px dashed #e2e8f0; padding-bottom: 16px; }
-        .cycle-row:last-child { border-bottom: none; padding-bottom: 0; }
-        .cycle-row h4 { margin: 10px 0 6px 0; color: var(--slate-900); }
-
-        .ejes-section { margin: 40px 0; }
-        .ejes-title { font-weight: 700; font-size: 1.3rem; margin-bottom: 20px; color: var(--slate-900); }
-        .grid4 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-        }
-        .eje-card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-        }
-        .eje-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            margin-bottom: 14px;
-        }
-        .eje-card h4 { margin: 0 0 8px 0; font-size: 1.1rem; }
-
-        .info-box, .warn-box, .nota-ped {
-            background: #f1f5f9;
-            border-left: 4px solid #64748b;
-            padding: 16px 20px;
-            border-radius: 0 12px 12px 0;
-            margin: 24px 0;
-        }
-        .warn-box { background: #fff7ed; border-left-color: #ea580c; }
-        .info-box p, .warn-box p { margin: 0; font-size: 0.95rem; }
-
-        /* Sub-navegaciones internas de los grados */
-        .sub-nav { display: flex; gap: 8px; margin-bottom: 24px; overflow-x: auto; padding-bottom: 4px; }
-        .sub-btn, .sub-btn-pc, .sub-btn-rub {
-            background: white;
-            border: 1px solid #cbd5e1;
-            padding: 8px 16px;
-            border-radius: 9999px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #475569;
-            white-space: nowrap;
-        }
-        .sub-btn.active, .sub-btn-pc.active-pc, .sub-btn-rub.active-r1 {
-            background: #2563eb;
-            color: white;
-            border-color: #2563eb;
-        }
-
-        /* Contenedores de Grados/Materias */
-        .sub-panel-pc, .sub-panel { display: none; }
-        .sub-panel-pc.active, .sub-panel.active { display: block; }
-
-        .card { background: white; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 16px; }
-        .card-body { padding: 24px; }
-        .campo { margin-bottom: 24px; border-bottom: 1px solid #f1f5f9; padding-bottom: 24px; }
-        .campo:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
-        .campo-h { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; align-items: center; }
-
-        .dot-list { padding-left: 20px; margin: 0; }
-        .dot-list li { margin-bottom: 10px; color: #334155; }
-
-        /* Ejes de Educación Digital */
-        .ejes-dig { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
-        .ejes-dig-label { font-size: 0.85rem; font-weight: 600; color: #64748b; }
-        .ej { padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
-        .ej-am { background: #ffe4e6; color: #9f1239; }
-        .ej-cd { background: #dbeafe; color: #1e40af; }
-        .ej-pc { background: #f3e8ff; color: #6b21a8; }
-
-        /* Principios Éticos */
-        .principio {
-            display: flex;
-            gap: 16px;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            margin-bottom: 16px;
-        }
-        .principio-icon {
-            width: 48px; height: 48px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem; flex-shrink: 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-        .principio-body { flex: 1; }
-        .principio-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 8px; }
-        .principio-title { font-weight: 700; font-size: 1.1rem; color: var(--slate-900); }
-        .principio-desc { margin: 0; color: #475569; }
-        .etico-intro, .rubrica-intro { margin-bottom: 24px; font-size: 1.1rem; color: #475569; }
-
-        /* Preguntas Orientadoras */
-        .preguntas-box { background: #f8fafc; border: 1px solid #e2e8f0; padding: 24px; border-radius: 16px; margin-top: 32px; }
-        .preguntas-box h3 { margin-top: 0; color: var(--slate-900); }
-        .preguntas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-        .pregunta-item { background: white; padding: 16px; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; gap: 12px; }
-        .pregunta-num {
-            background: #e2e8f0; color: var(--slate-900); width: 24px; height: 24px;
-            display: flex; align-items: center; justify-content: center; border-radius: 50%;
-            font-size: 0.85rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;
-        }
-        .pregunta-item p { margin: 0; font-size: 0.95rem; }
-
-        /* Tablas de Rúbricas */
-        .table-wrap { overflow-x: auto; background: white; border: 1px solid #e2e8f0; border-radius: 0 0 12px 12px; }
-        .rubrica-table { width: 100%; border-collapse: collapse; text-align: left; }
-        .rubrica-table th { background: #f1f5f9; padding: 14px 16px; font-weight: 600; color: #475569; font-size: 0.9rem; border-bottom: 2px solid #e2e8f0; }
-        .rubrica-table td { padding: 14px 16px; border-bottom: 1px solid #e2e8f0; font-size: 0.9rem; vertical-align: top; }
-        .rubrica-table tr:last-child td { border-bottom: none; }
-        .rub-head-pur, .rub-head-tea { padding: 16px 20px; font-weight: 700; font-size: 1.2rem; color: white; border-radius: 12px 12px 0 0; }
-        .rub-head-pur { background: var(--pur-text); }
-        .rub-head-tea { background: var(--tea-text); }
-        .slabel { font-weight: 700; text-transform: uppercase; color: #2563eb; font-size: 0.8rem; margin: 0 0 4px 0; }
-        .nota-ped { background: white; border-color: #2563eb; }
-
-        /* Ocultar elementos en impresión */
-        @media print { .no-print { display: none !important; } }
-    </style>
+  /* ── SVG ICONS ── */
+  svg { display:inline-block; }
+</style>
 </head>
 <body>
 
-<p style="color: #64748b; font-size: 0.9rem; font-weight: 500;">Anexo curricular de inteligencia artificial · DC Primario GCBA 2024</p>
-
 <header>
-    <div class="inner">
-        <div>
-            <p class="meta">Ministerio de Educación · GCBA</p>
-            <h1>Anexo curricular de inteligencia artificial</h1>
-            <p class="sub">Nivel Primario · 1.° a 7.° grado</p>
-        </div>
-        <div class="badges">
-            <span class="badge badge-pur">Primer Ciclo 1.°–3.°</span> 
-            <span class="badge badge-tea">Segundo Ciclo 4.°–7.°</span> 
-            <button class="btn-print no-print" onclick="window.print()"> Exportar PDF </button>
-        </div>
+  <div class="inner">
+    <div>
+      <p class="meta">Ministerio de Educación · GCBA · DC Primario 2024</p>
+      <h1>Anexo curricular de inteligencia artificial</h1>
+      <p class="sub">Nivel Primario · 1° a 7° grado</p>
     </div>
+    <div class="badges">
+      <span class="badge badge-pur">Primer ciclo 1°–3°</span>
+      <span class="badge badge-tea">Segundo ciclo 4°–7°</span>
+      <button class="btn-print no-print" onclick="window.print()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Exportar PDF
+      </button>
+    </div>
+  </div>
 </header>
 
-<div class="search-wrap no-print">
-    <input id="search-input" class="search-input" autocomplete="off" type="text" placeholder="Buscar por materia, grado, concepto…" /> 
-    <button id="search-clear" class="search-clear">×</button>
-    <div id="search-results" class="search-results"> </div>
-</div>
+<main>
 
-<nav class="tab-nav">
-    <button class="tab-btn active" data-tab="mapa"> Mapa de progresión </button> 
-    <button class="tab-btn" data-tab="primer"> Primer ciclo </button> 
-    <button class="tab-btn" data-tab="segundo"> Segundo ciclo </button> 
-    <button class="tab-btn" data-tab="etico"> Eje ético </button> 
-    <button class="tab-btn" data-tab="rubrica"> Rúbrica docente </button>
-</nav>
+  <!-- SEARCH -->
+  <div class="search-wrap no-print">
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search-input" placeholder="Buscar por materia, grado, concepto…" autocomplete="off" oninput="doSearch()" onfocus="doSearch()">
+    <button class="search-clear" id="search-clear" onclick="clearSearch()">×</button>
+    <div class="search-results" id="search-results"></div>
+  </div>
 
-<div id="panel-mapa" class="panel active">
+  <!-- TAB NAV -->
+  <nav class="tab-nav" role="tablist">
+    <button class="tab-btn active" data-tab="mapa"    onclick="showTab('mapa',this)"   role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+      Mapa de progresión
+    </button>
+    <button class="tab-btn" data-tab="primer"  onclick="showTab('primer',this)"  role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      Primer ciclo
+    </button>
+    <button class="tab-btn" data-tab="segundo" onclick="showTab('segundo',this)" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      Segundo ciclo
+    </button>
+    <button class="tab-btn" data-tab="etico"   onclick="showTab('etico',this)"   role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Eje ético
+    </button>
+    <button class="tab-btn" data-tab="rubrica" onclick="showTab('rubrica',this)" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      Rúbrica docente
+    </button>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════ MAPA -->
+  <div class="panel active" id="panel-mapa">
     <div class="mapa-hero">
-        <h2>Mapa de progresión</h2>
-        <p>Trayectoria completa en espiral: cada ciclo profundiza sobre el anterior (UNESCO AI Framework; 2024).</p>
+      <h2>Mapa de progresión</h2>
+      <p>Trayectoria completa en espiral. Cada ciclo profundiza sobre el anterior (UNESCO AI Framework 2024).</p>
     </div>
+
     <div class="cycle-grid">
-        <div class="cycle-card pur">
-            <div class="cycle-card-head"><span class="cycle-num">1</span> Primer Ciclo</div>
-            <div class="cycle-card-body">
-                <div class="cycle-row"><span class="badge badge-pur">1.° y 2.°</span>
-                    <h4>👁 Percibir y nombrar</h4>
-                    <p>La IA en objetos cotidianos. Reconocerla y describir qué hace. Actividades lúdicas y narrativas guiadas.</p>
-                </div>
-                <div class="cycle-row"><span class="badge badge-pur">3.°</span>
-                    <h4>✋ Explorar e interactuar</h4>
-                    <p>Usar herramientas simples con guía docente. Primeras preguntas críticas: "¿Por qué la IA dijo eso?"</p>
-                </div>
-            </div>
+      <div class="cycle-card pur">
+        <div class="cycle-card-head"><span class="cycle-num">1</span> Primer ciclo</div>
+        <div class="cycle-card-body">
+          <div class="cycle-row">
+            <span class="glabel badge-pur">1° y 2°</span>
+            <h4>👁 Percibir y nombrar</h4>
+            <p>La IA en objetos cotidianos. Reconocerla y describir qué hace. Actividades lúdicas y narrativas guiadas.</p>
+          </div>
+          <div class="cycle-row">
+            <span class="glabel badge-pur">3°</span>
+            <h4>✋ Explorar e interactuar</h4>
+            <p>Usar herramientas simples con guía docente. Primeras preguntas críticas: "¿Por qué la IA dijo eso?"</p>
+          </div>
         </div>
-        <div class="cycle-card tea">
-            <div class="cycle-card-head"><span class="cycle-num">2</span> Segundo Ciclo</div>
-            <div class="cycle-card-body">
-                <div class="cycle-row"><span class="badge badge-tea">4.° y 5.°</span>
-                    <h4>🎨 Crear y cuestionar</h4>
-                    <p>Producir con IA en proyectos disciplinares. Evaluar fuentes, detectar alucinaciones, diseñar prompts.</p>
-                </div>
-                <div class="cycle-row"><span class="badge badge-tea">6.° y 7.°</span>
-                    <h4>🧠 Analizar y decidir</h4>
-                    <p>Identificar sesgos y estereotipos. Reflexionar sobre impacto laboral, autoría, big data y ética.</p>
-                </div>
-            </div>
+      </div>
+      <div class="cycle-card tea">
+        <div class="cycle-card-head"><span class="cycle-num">2</span> Segundo ciclo</div>
+        <div class="cycle-card-body">
+          <div class="cycle-row">
+            <span class="glabel badge-tea">4° y 5°</span>
+            <h4>🎨 Crear y cuestionar</h4>
+            <p>Producir con IA en proyectos disciplinares. Evaluar fuentes, detectar alucinaciones, diseñar prompts.</p>
+          </div>
+          <div class="cycle-row">
+            <span class="glabel badge-tea">6° y 7°</span>
+            <h4>🧠 Analizar y decidir</h4>
+            <p>Identificar sesgos y estereotipos. Reflexionar sobre impacto laboral, autoría, big data y ética.</p>
+          </div>
         </div>
+      </div>
     </div>
+
     <div class="ejes-section">
-        <p class="ejes-title">Ejes funcionales para el uso pedagógico de la IA</p>
-        <div class="grid4">
-            <div class="eje-card">
-                <div class="eje-icon" style="background: #eff6ff; color: #3b82f6;">🎨</div>
-                <h4>Crear</h4>
-                <p>Generar textos, imágenes y producciones con IA como insumo para proyectos áulicos.</p>
-            </div>
-            <div class="eje-card">
-                <div class="eje-icon" style="background: #f5f3ff; color: #8b5cf6;">❤</div>
-                <h4>Personalizar</h4>
-                <p>Adaptar contenidos al ritmo y necesidades de cada estudiante.</p>
-            </div>
-            <div class="eje-card">
-                <div class="eje-icon" style="background: #fffbeb; color: #f59e0b;">✓</div>
-                <h4>Corregir</h4>
-                <p>Retroalimentación formativa inmediata sobre producciones escolares.</p>
-            </div>
-            <div class="eje-card">
-                <div class="eje-icon" style="background: #ecfdf5; color: #10b981;">💬</div>
-                <h4>Volver accesible</h4>
-                <p>Texto a voz, subtitulado, simplificación de consignas para diversidad de trayectorias.</p>
-            </div>
-        </div>
+      <p class="ejes-title">Ejes funcionales para el uso pedagógico de la IA</p>
+      <div class="grid4">
+        <div class="eje-card"><div class="eje-icon" style="background:#eff6ff;color:#3b82f6">🎨</div><h4>Crear</h4><p>Generar textos, imágenes y producciones con IA como insumo para proyectos áulicos.</p></div>
+        <div class="eje-card"><div class="eje-icon" style="background:#f5f3ff;color:#8b5cf6">❤</div><h4>Personalizar</h4><p>Adaptar contenidos al ritmo y necesidades de cada estudiante.</p></div>
+        <div class="eje-card"><div class="eje-icon" style="background:#fffbeb;color:#f59e0b">✓</div><h4>Corregir</h4><p>Retroalimentación formativa inmediata sobre producciones escolares.</p></div>
+        <div class="eje-card"><div class="eje-icon" style="background:#ecfdf5;color:#10b981">💬</div><h4>Volver accesible</h4><p>Texto a voz, subtitulado, simplificación de consignas para diversidad de trayectorias.</p></div>
+      </div>
     </div>
+
     <div class="info-box">
-        <p>Este anexo articula el DC de Educación Primaria GCBA 2024, el Marco de Gobernanza de IA (GOED; 2025), la Guía para un uso crítico (v3.0) y los marcos de UNESCO (2024). El uso de IA se implementa exclusivamente con cuentas institucionales y mediación docente permanente.</p>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p>Este anexo articula el DC de Educación Primaria GCBA 2024, el Marco de Gobernanza de IA (GOED 2025), la Guía para un uso crítico (v3.0) y los marcos de UNESCO (2024). El uso de IA se implementa exclusivamente con cuentas institucionales y mediación docente permanente.</p>
     </div>
-</div>
+  </div>
 
-<div id="panel-primer" class="panel">
+  <!-- ════════════════════════════════════════════════════ PRIMER CICLO -->
+  <div class="panel" id="panel-primer">
     <div class="ciclo-banner pur">
-        <div class="badges" style="margin-bottom: 10px;">
-            <span class="badge badge-pur">Primer Ciclo · 1.°, 2.° y 3.° grado</span> 
-            <span class="badge" style="background: var(--pur-text); color: #fff; border-color: var(--pur-text);">Basado en el DC Primario GCBA 2024</span>
-        </div>
-        <p>Los chicos reconocen la IA en objetos y situaciones cotidianas, la experimentan siempre con mediación docente y reflexionan sobre su impacto. </p>
-        <div class="ejes-dig" style="margin-top: 8px;">
-            <span class="ejes-dig-label">Ejes de Educación Digital:</span> 
-            <span class="ej ej-am">Alfabetizaciones Múltiples</span> 
-            <span class="ej ej-cd">Ciudadanía Digital</span> 
-            <span class="ej ej-pc">PC, Programación y Robótica</span>
-        </div>
+      <div class="badges" style="margin-bottom:10px">
+        <span class="badge badge-pur">Primer ciclo · 1°, 2° y 3° grado</span>
+        <span class="badge" style="background:var(--pur-text);color:#fff;border-color:var(--pur-text)">Basado en el DC Primario GCBA 2024</span>
+      </div>
+      <p>Los estudiantes reconocen la IA en objetos y situaciones cotidianas, la experimentan con mediación docente y reflexionan críticamente sobre su impacto. El eje predominante en 1° y 2° es Tecnologías, Diseño y Programación; en 3° se suma Conocimiento del Mundo y Educación Artística.</p>
+      <div class="ejes-dig" style="margin-top:8px">
+        <span class="ejes-dig-label">Ejes de Educación Digital:</span>
+        <span class="ej ej-am">Alfabetizaciones Múltiples</span>
+        <span class="ej ej-cd">Ciudadanía Digital</span>
+        <span class="ej ej-pc">PC, Programación y Robótica</span>
+      </div>
     </div>
-    
+
     <div class="sub-nav no-print">
-        <button class="sub-btn-pc active-pc" data-target="pc-g1">1.° grado</button> 
-        <button class="sub-btn-pc" data-target="pc-g2">2.° grado</button> 
-        <button class="sub-btn-pc" data-target="pc-g3">3.° grado</button> 
-        <button class="sub-btn-pc" data-target="pc-gtodos">Todos los grados</button>
+      <button class="sub-btn-pc active-pc" onclick="showGradePC('g1',this)">1° grado</button>
+      <button class="sub-btn-pc" onclick="showGradePC('g2',this)">2° grado</button>
+      <button class="sub-btn-pc" onclick="showGradePC('g3',this)">3° grado</button>
+      <button class="sub-btn-pc" onclick="showGradePC('gtodos',this)">Todos los grados</button>
     </div>
 
-    <div id="pc-g1" class="card sub-panel-pc active">
-        <div class="card-body">
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-pur">Tecnologías, Diseño y Programación</span> <span class="ej ej-pc">PC, P y R</span> <span class="ej ej-cd">Ciudadanía Digital</span></div>
-                <ul class="dot-list">
-                    <li>Interviene en espacios de reflexión sobre los procesos tecnológicos, la IA y su impacto en la vida de las personas.</li>
-                    <li>Identifica aplicaciones y utilidades de inteligencia artificial.</li>
-                    <li>Experimenta con aplicaciones de IA diseñadas para niños y niñas.</li>
-                    <li>IA en el reconocimiento de dibujos y patrones.</li>
-                    <li>Indagación de recursos digitales con IA como oportunidad para la experimentación y la reflexión crítica sobre estas tecnologías.</li>
-                </ul>
-            </div>
+    <!-- 1° grado -->
+    <div class="card sub-panel-pc active" id="pc-g1">
+      <div class="card-body">
+        <div class="campo">
+          <div class="campo-h">
+            <span class="badge badge-pur">Tecnologías, Diseño y Programación</span>
+            <span class="ej ej-pc">PC, P y R</span>
+            <span class="ej ej-cd">Ciudadanía Digital</span>
+          </div>
+          <ul class="dot-list">
+            <li><span class="dot dot-pur"></span>Interviene en espacios de reflexión sobre los procesos tecnológicos, la IA y su impacto en la vida de las personas.</li>
+            <li><span class="dot dot-pur"></span>Identifica aplicaciones y utilidades de inteligencia artificial.</li>
+            <li><span class="dot dot-pur"></span>Experimenta con aplicaciones de IA diseñadas para niños y niñas.</li>
+            <li><span class="dot dot-pur"></span>IA en el reconocimiento de dibujos y patrones.</li>
+            <li><span class="dot dot-pur"></span>Indagación de recursos digitales con IA como oportunidad para la experimentación y la reflexión crítica sobre estas tecnologías.</li>
+          </ul>
         </div>
+      </div>
     </div>
-    <div id="pc-g2" class="card sub-panel-pc">
-        <div class="card-body">
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-pur">Tecnologías, Diseño y Programación</span> <span class="ej ej-pc">PC, P y R</span> <span class="ej ej-cd">Ciudadanía Digital</span></div>
-                <ul class="dot-list">
-                    <li>Reflexiona sobre el empleo de procesos tecnológicos automatizados, la IA y su impacto en la vida de las personas.</li>
-                    <li>Identifica ejemplos de automatización e IA en el trabajo.</li>
-                    <li>El rol de los procesos de automatización y el uso de la IA en el trabajo, en tareas repetitivas: chatbots y robots industriales.</li>
-                    <li>Indagación de recursos digitales con IA como oportunidad para la experimentación y la reflexión crítica, en relación con los procesos de automatización.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div id="pc-g3" class="card sub-panel-pc">
-        <div class="card-body">
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-amb">Conocimiento del Mundo</span> <span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Indagación de recursos digitales con IA como oportunidad para la experimentación y la reflexión crítica, en relación con la búsqueda de información sobre otras épocas.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-cor">Teatro / Educación Artística</span> <span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Indagación de recursos digitales con IA como oportunidad para la experimentación y reflexión crítica sobre estas tecnologías.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-pur">Tecnologías, Diseño y Programación</span> <span class="ej ej-pc">PC, P y R</span> <span class="ej ej-cd">Ciudadanía Digital</span></div>
-                <ul class="dot-list">
-                    <li>Comprende concepts básicos de máquinas, sistemas y robots que pueden adaptarse a su entorno a través del aprendizaje automático e IA.</li>
-                    <li>Reflexiona con perspectiva crítica sobre el empleo de la IA y el uso seguro de las redes, específicamente su impacto en la vida de las personas.</li>
-                    <li>Evalúa críticamente las posibilidades y los riesgos de la inteligencia artificial.</li>
-                    <li>Explica características básicas de la inteligencia artificial.</li>
-                    <li>Identifica el uso de IA en algunas situaciones de la vida cotidiana.</li>
-                    <li>Posibilidades y riesgos de la inteligencia artificial.</li>
-                    <li>Indagación de recursos digitales con IA como oportunidad para la experimentación y la reflexión crítica sobre estas tecnologías.</li>
-                    <li>Oportunidades y desafíos que proponen los entornos virtuales y tecnologías digitales, especialmente en relación con el uso de IA en situaciones cotidianas.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div id="pc-gtodos" class="card sub-panel-pc">
-        <div class="card-body">
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-tea">Educación Digital (todos los grados)</span> <span class="ej ej-am">Alfabetizaciones Múltiples</span> <span class="ej ej-cd">Ciudadanía Digital</span></div>
-                <ul class="dot-list">
-                    <li>Navegar en diversos entornos digitales, incluyendo sistemas de IA, propiciando estrategias para la experimentación y la reflexión sobre la información que estos ofrecen.</li>
-                    <li>Indagación de recursos digitales con IA como oportunidad para la experimentación y la reflexión crítica sobre esta tecnología.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="warn-box" style="margin-top: 16px;">
-        <p>Toda actividad en Primer Ciclo requiere mediación docente directa. No se solicitan datos personales. El foco es el asombro, la curiosidad y la reflexión crítica; no la autonomía técnica.</p>
-    </div>
-</div>
 
-<div id="panel-segundo" class="panel">
+    <!-- 2° grado -->
+    <div class="card sub-panel-pc" id="pc-g2">
+      <div class="card-body">
+        <div class="campo">
+          <div class="campo-h">
+            <span class="badge badge-pur">Tecnologías, Diseño y Programación</span>
+            <span class="ej ej-pc">PC, P y R</span>
+            <span class="ej ej-cd">Ciudadanía Digital</span>
+          </div>
+          <ul class="dot-list">
+            <li><span class="dot dot-pur"></span>Reflexiona sobre el empleo de procesos tecnológicos automatizados, la IA y su impacto en la vida de las personas.</li>
+            <li><span class="dot dot-pur"></span>Identifica ejemplos de automatización e IA en el trabajo.</li>
+            <li><span class="dot dot-pur"></span>El rol de los procesos de automatización y el uso de la IA en el trabajo, en tareas repetitivas: chatbots y robots industriales.</li>
+            <li><span class="dot dot-pur"></span>Indagación de recursos digitales con IA como oportunidad para la experimentación y la reflexión crítica, en relación con los procesos de automatización.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3° grado -->
+    <div class="card sub-panel-pc" id="pc-g3">
+      <div class="card-body">
+        <div class="campo">
+          <div class="campo-h">
+            <span class="badge badge-amb">Conocimiento del Mundo</span>
+            <span class="ej ej-am">Alfabetizaciones Múltiples</span>
+          </div>
+          <ul class="dot-list">
+            <li><span class="dot dot-pur"></span>Indagación de recursos digitales con IA como oportunidad para la experimentación y la reflexión crítica, en relación con la búsqueda de información sobre otras épocas.</li>
+          </ul>
+        </div>
+        <div class="campo">
+          <div class="campo-h">
+            <span class="badge badge-cor">Teatro / Educación Artística</span>
+            <span class="ej ej-am">Alfabetizaciones Múltiples</span>
+          </div>
+          <ul class="dot-list">
+            <li><span class="dot dot-pur"></span>Indagación de recursos digitales con IA como oportunidad para la experimentación y reflexión crítica sobre estas tecnologías.</li>
+          </ul>
+        </div>
+        <div class="campo">
+          <div class="campo-h">
+            <span class="badge badge-pur">Tecnologías, Diseño y Programación</span>
+            <span class="ej ej-pc">PC, P y R</span>
+            <span class="ej ej-cd">Ciudadanía Digital</span>
+          </div>
+          <ul class="dot-list">
+            <li><span class="dot dot-pur"></span>Comprende conceptos básicos de máquinas, sistemas y robots que pueden adaptarse a su entorno a través del aprendizaje automático e IA.</li>
+            <li><span class="dot dot-pur"></span>Reflexiona con perspectiva crítica sobre el empleo de la IA y el uso seguro de las redes, específicamente su impacto en la vida de las personas.</li>
+            <li><span class="dot dot-pur"></span>Evalúa críticamente las posibilidades y los riesgos de la inteligencia artificial.</li>
+            <li><span class="dot dot-pur"></span>Explica características básicas de la inteligencia artificial.</li>
+            <li><span class="dot dot-pur"></span>Identifica el uso de IA en algunas situaciones de la vida cotidiana.</li>
+            <li><span class="dot dot-pur"></span>Posibilidades y riesgos de la inteligencia artificial.</li>
+            <li><span class="dot dot-pur"></span>Indagación de recursos digitales con IA como oportunidad para la experimentación y la reflexión crítica sobre estas tecnologías.</li>
+            <li><span class="dot dot-pur"></span>Oportunidades y desafíos que proponen los entornos virtuales y tecnologías digitales, especialmente en relación con el uso de IA en situaciones cotidianas.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Todos los grados -->
+    <div class="card sub-panel-pc" id="pc-gtodos">
+      <div class="card-body">
+        <div class="campo">
+          <div class="campo-h">
+            <span class="badge badge-tea">Educación Digital (todos los grados)</span>
+            <span class="ej ej-am">Alfabetizaciones Múltiples</span>
+            <span class="ej ej-cd">Ciudadanía Digital</span>
+          </div>
+          <ul class="dot-list">
+            <li><span class="dot dot-pur"></span>Navegar en diversos entornos digitales, incluyendo sistemas de IA, propiciando estrategias para la experimentación y la reflexión sobre la información que estos ofrecen.</li>
+            <li><span class="dot dot-pur"></span>Indagación de recursos digitales con IA como oportunidad para la experimentación y la reflexión crítica sobre esta tecnología.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="warn-box" style="margin-top:16px">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2" style="flex-shrink:0;margin-top:1px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <p>Toda actividad en Primer Ciclo requiere mediación docente directa. No se solicitan datos personales. El foco es el asombro, la curiosidad y la reflexión crítica; no la autonomía técnica.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ SEGUNDO CICLO -->
+  <div class="panel" id="panel-segundo">
     <div class="ciclo-banner tea">
-        <div class="badges" style="margin-bottom: 10px;">
-            <span class="badge badge-tea">Segundo Ciclo · 4.°, 5.°, 6.° y 7.° grado</span> 
-            <span class="badge" style="background: var(--tea-text); color: #fff; border-color: var(--tea-text);">Basado en el DC Primario GCBA 2024</span>
-        </div>
-        <div class="ejes-dig" style="margin-top: 8px;">
-            <span class="ejes-dig-label">Ejes de Educación Digital:</span> 
-            <span class="ej ej-am">Alfabetizaciones Múltiples</span> 
-            <span class="ej ej-cd">Ciudadanía Digital</span> 
-            <span class="ej ej-pc">PC, Programación y Robótica</span>
-        </div>
-    </div>
-    
-    <div class="sub-nav no-print">
-        <button class="sub-btn active" data-target="seg-g4">4.° grado</button> 
-        <button class="sub-btn" data-target="seg-g5">5.° grado</button> 
-        <button class="sub-btn" data-target="seg-g45">4.° y 5.° (ED)</button> 
-        <button class="sub-btn" data-target="seg-g6">6.° grado</button> 
-        <button class="sub-btn" data-target="seg-g7">7.° grado</button> 
-        <button class="sub-btn" data-target="seg-g67">6.° y 7.° (ED)</button> 
-        <button class="sub-btn" data-target="seg-gtodos">Todos los grados</button>
+      <div class="badges" style="margin-bottom:10px">
+        <span class="badge badge-tea">Segundo ciclo · 4°, 5°, 6° y 7° grado</span>
+        <span class="badge" style="background:var(--tea-text);color:#fff;border-color:var(--tea-text)">Basado en el DC Primario GCBA 2024</span>
+      </div>
+      <div class="ejes-dig" style="margin-top:8px">
+        <span class="ejes-dig-label">Ejes de Educación Digital:</span>
+        <span class="ej ej-am">Alfabetizaciones Múltiples</span>
+        <span class="ej ej-cd">Ciudadanía Digital</span>
+        <span class="ej ej-pc">PC, Programación y Robótica</span>
+      </div>
     </div>
 
-    <div id="seg-g4" class="card sub-panel active">
-        <div class="card-body">
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-blu">Lengua</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Busca significado de palabras en sitios web y aplicaciones que usen IA.</li>
-                    <li>Accede e indaga información en motores de búsqueda e IA, con lecturas guiadas por el docente.</li>
-                    <li>Identifica procedencia y confiabilidad de fuentes, incluso las producidas por IA generativa. Detecta veracidad/falsedad.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-grn">Ciencias Naturales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Materiales, implantes y prótesis tecnológicas y su relación con la IA para mejorar la calidad de vida.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-amb">Ciencias Sociales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Accede e indaga información digital distinguiendo posibilidades de distintas herramientas, incluso sistemas de IA.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-cor">Educación Artística</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Creación y resignificación de imágenes con IA: instrucciones textuales (prompts), avatares, múltiples imágenes. Artes Visuales.</li>
-                    <li>Búsqueda de información sobre autores y compositores usando IA. Música.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-pur">Tecnologías, Diseño y Programación</span><span class="ej ej-pc">PC, P y R</span></div>
-                <ul class="dot-list">
-                    <li>Comprende qué es la IA y cómo se usa en aplicaciones cotidianas (buscadores, algoritmos de recomendación).</li>
-                    <li>Explora herramientas de IA con ayuda docente: asistentes virtuales, filtros. Conceptos básicos de aprendizaje automático.</li>
-                    <li>Riesgos de usos no éticos: creación de contenido falso. Derechos de autor y producciones de la IA.</li>
-                </ul>
-            </div>
-        </div>
+    <div class="sub-nav no-print">
+      <button class="sub-btn active" onclick="showGrade('g4',this)">4° grado</button>
+      <button class="sub-btn" onclick="showGrade('g5',this)">5° grado</button>
+      <button class="sub-btn" onclick="showGrade('g45',this)">4° y 5° (ED)</button>
+      <button class="sub-btn" onclick="showGrade('g6',this)">6° grado</button>
+      <button class="sub-btn" onclick="showGrade('g7',this)">7° grado</button>
+      <button class="sub-btn" onclick="showGrade('g67',this)">6° y 7° (ED)</button>
+      <button class="sub-btn" onclick="showGrade('gtodos',this)">Todos los grados</button>
     </div>
-    <div id="seg-g5" class="card sub-panel">
-        <div class="card-body">
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-blu">Lengua</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Comprende el funcionamiento básico de motores de búsqueda y chats de IA para evaluar distintos tipos de resultados.</li>
-                    <li>Diseña preguntas y prompts para buscar información sobre un tema usando IA generativa.</li>
-                    <li>Lee y evalúa la información que ofrece la IA a partir de prompts: pertinencia y especificidad.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-pur">Matemática</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Características de fuentes de información estadística producida por IA: procedencia y confiabilidad.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-grn">Ciencias Naturales / Sociales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Confiabilidad de fuentes producidas por IA para el estudio del movimiento de astros y la Luna.</li>
-                    <li>Indagación digital distinguiendo herramientas, incluso sistemas de IA. Cs. Sociales.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-cor">Ed. Artística / Ed. Física / Lenguas adicionales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Búsqueda de divulgación artístico-cultural con IA. Indagación de oferta musical y espectáculos.</li>
-                    <li>Acceso a IA para generación de datos sobre prácticas deportivas y análisis posterior. Ed. Física.</li>
-                    <li>Indagación con IA para lectura y escucha de géneros textuales en lenguas adicionales.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-pur">Tecnologías, Diseño y Programación</span><span class="ej ej-pc">PC, P y R</span></div>
-                <ul class="dot-list">
-                    <li>Reconoce procesos donde no es visible la participación humana, como la IA.</li>
-                    <li>Reflexiona sobre principios éticos: sesgo algorítmico, privacidad de datos, contenido falso.</li>
-                </ul>
-            </div>
-        </div>
+
+    <!-- 4° grado -->
+    <div class="card sub-panel active" id="seg-g4">
+      <div class="card-body">
+        <div class="campo"><div class="campo-h"><span class="badge badge-blu">Lengua</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Busca significado de palabras en sitios web y aplicaciones que usen IA.</li><li><span class="dot"></span>Accede e indaga información en motores de búsqueda e IA, con lecturas guiadas por el docente.</li><li><span class="dot"></span>Identifica procedencia y confiabilidad de fuentes, incluso las producidas por IA generativa. Detecta veracidad/falsedad.</li></ul></div>
+        <div class="campo"><div class="campo-h"><span class="badge badge-grn">Ciencias Naturales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Materiales, implantes y prótesis tecnológicas y su relación con la IA para mejorar la calidad de vida.</li></ul></div>
+        <div class="campo"><div class="campo-h"><span class="badge badge-amb">Ciencias Sociales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Accede e indaga información digital distinguiendo posibilidades de distintas herramientas, incluso sistemas de IA.</li></ul></div>
+        <div class="campo"><div class="campo-h"><span class="badge badge-cor">Educación Artística</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Creación y resignificación de imágenes con IA: instrucciones textuales (prompts), avatares, múltiples imágenes. Artes Visuales.</li><li><span class="dot"></span>Búsqueda de información sobre autores y compositores usando IA. Música.</li></ul></div>
+        <div class="campo"><div class="campo-h"><span class="badge badge-pur">Tecnologías, Diseño y Programación</span><span class="ej ej-pc">PC, P y R</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Comprende qué es la IA y cómo se usa en aplicaciones cotidianas (buscadores, algoritmos de recomendación).</li><li><span class="dot"></span>Explora herramientas de IA con ayuda docente: asistentes virtuales, filtros. Conceptos básicos de aprendizaje automático.</li><li><span class="dot"></span>Riesgos de usos no éticos: creación de contenido falso. Derechos de autor y producciones de la IA.</li></ul></div>
+      </div>
     </div>
-    <div id="seg-g45" class="card sub-panel">
-        <div class="card-body">
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-tea">Educación Digital (4.° y 5.°)</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Investigar en entornos digitales (incluso con IA) usando estrategias de búsqueda, selección y validación de fuentes.</li>
-                    <li>Gestionar información digital y contenidos propios/ajenos, incluyendo entornos que usan IA.</li>
-                    <li>Acceder a sistemas de IA para generación de contenidos digitales. Reflexión sobre características y desafíos.</li>
-                    <li>Prácticas emergentes de la cultura digital: interconexión y sistemas de IA, oportunidades y desafíos.</li>
-                    <li>Riesgos de usos no éticos: creación de contenidos falsos con IA.</li>
-                </ul>
-            </div>
-        </div>
+
+    <!-- 5° grado -->
+    <div class="card sub-panel" id="seg-g5">
+      <div class="card-body">
+        <div class="campo"><div class="campo-h"><span class="badge badge-blu">Lengua</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Comprende el funcionamiento básico de motores de búsqueda y chats de IA para evaluar distintos tipos de resultados.</li><li><span class="dot"></span>Diseña preguntas y prompts para buscar información sobre un tema usando IA generativa.</li><li><span class="dot"></span>Lee y evalúa la información que ofrece la IA a partir de prompts: pertinencia y especificidad.</li></ul></div>
+        <div class="campo"><div class="campo-h"><span class="badge badge-pur">Matemática</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Características de fuentes de información estadística producida por IA: procedencia y confiabilidad.</li></ul></div>
+        <div class="campo"><div class="campo-h"><span class="badge badge-grn">Ciencias Naturales / Sociales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Confiabilidad de fuentes producidas por IA para el estudio del movimiento de astros y la Luna.</li><li><span class="dot"></span>Indagación digital distinguiendo herramientas, incluso sistemas de IA. Cs. Sociales.</li></ul></div>
+        <div class="campo"><div class="campo-h"><span class="badge badge-cor">Ed. Artística / Ed. Física / Lenguas adicionales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Búsqueda de divulgación artístico-cultural con IA. Indagación de oferta musical y espectáculos.</li><li><span class="dot"></span>Acceso a IA para generación de datos sobre prácticas deportivas y análisis posterior. Ed. Física.</li><li><span class="dot"></span>Indagación con IA para lectura y escucha de géneros textuales en lenguas adicionales.</li></ul></div>
+        <div class="campo"><div class="campo-h"><span class="badge badge-pur">Tecnologías, Diseño y Programación</span><span class="ej ej-pc">PC, P y R</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Reconoce procesos donde no es visible la participación humana, como la IA.</li><li><span class="dot"></span>Reflexiona sobre principios éticos: sesgo algorítmico, privacidad de datos, contenido falso.</li></ul></div>
+      </div>
     </div>
-    <div id="seg-g6" class="card sub-panel">
-        <div class="card-body">
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-blu">Lengua</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Diseño de prompts para buscar datos usando IA generativa (chat de IA).</li>
-                    <li>Usar funcionalidades de IA que facilitan tareas rutinarias: autocompletar, sugerencias de escritura, respuestas automáticas.</li>
-                    <li>Creación y socialización de contenidos digitales propios y colaborativos usando herramientas con IA.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-pur">Matemática</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Oportunidades y desafíos de tecnologías digitales: big data, IA, robótica, vinculados a probabilidad y estadística.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-amb">Ciencias Sociales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Oportunidades y desafíos de la IA, robótica y realidad virtual comparados con avances tecnológicos históricos.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-cor">Educación Artística</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Edición fotográfica con IA: difuminado, eliminación de fondos, colorización, animación mediante prompts. Artes Visuales.</li>
-                    <li>Producción musical con IA: modelos generativos de audio. Música.</li>
-                    <li>Derechos de autor e IA en la creación artística. Cambios en producción y circulación cultural.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-pur">Tecnologías, Diseño y Programación</span><span class="ej ej-pc">PC, P y R</span></div>
-                <ul class="dot-list">
-                    <li>Exploración de tecnologías emergentes: IA, realidad virtual, impresión 3D e impacto en la sociedad.</li>
-                    <li>Estereotipos corporales, de género y lingüísticos en el funcionamiento de la IA. Problematización del entrenamiento.</li>
-                    <li>Impacto de la IA y la automatización en la organización del trabajo.</li>
-                    <li>Uso de IA como asistente para resolver problemas de programación.</li>
-                </ul>
-            </div>
-        </div>
+
+    <!-- 4° y 5° ED -->
+    <div class="card sub-panel" id="seg-g45">
+      <div class="card-body">
+        <div class="campo"><div class="campo-h"><span class="badge badge-tea">Educación Digital (4° y 5°)</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Investigar en entornos digitales (incluso con IA) usando estrategias de búsqueda, selección y validación de fuentes.</li><li><span class="dot"></span>Gestionar información digital y contenidos propios/ajenos, incluyendo entornos que usan IA.</li><li><span class="dot"></span>Acceder a sistemas de IA para generación de contenidos digitales. Reflexión sobre características y desafíos.</li><li><span class="dot"></span>Prácticas emergentes de la cultura digital: interconexión y sistemas de IA, oportunidades y desafíos.</li><li><span class="dot"></span>Riesgos de usos no éticos: creación de contenidos falsos con IA.</li></ul></div>
+      </div>
     </div>
-    <div id="seg-g7" class="card sub-panel">
-        <div class="card-body">
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-grn">Ciencias Naturales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Interacciones entre el campo científico y la IA. Reflexión sobre construcción y modificación del conocimiento científico.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-pur">Tecnologías, Diseño y Programación</span><span class="ej ej-pc">PC, P y R</span></div>
-                <ul class="dot-list">
-                    <li>Resolver problemas de diseño que involucren plataformas e IA. Industria 4.0, robótica.</li>
-                    <li>Identifica problemas éticos en el desarrollo y uso de sistemas de IA. Reconoce tipos de sesgos en el entrenamiento automático.</li>
-                    <li>Proyectos avanzados: aprendizaje automático, redes neuronales, reconocimiento facial, chatbots.</li>
-                    <li>Usa IA generativa como asistente en producción de código. Habilidades para el uso efectivo de IA generativa.</li>
-                    <li>Problemas éticos en IA aplicada a procesos industriales: diseño inclusivo, entrenamiento libre de sesgos de género.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-blu">Lenguas adicionales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Funcionamiento básico de motores de búsqueda y sistemas de IA conversacionales. Evaluación de resultados según cómo se formula la búsqueda.</li>
-                </ul>
-            </div>
-        </div>
+
+    <!-- 6° grado -->
+    <div class="card sub-panel" id="seg-g6">
+      <div class="card-body">
+        <div class="campo"><div class="campo-h"><span class="badge badge-blu">Lengua</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Diseño de prompts para buscar datos usando IA generativa (chat de IA).</li><li><span class="dot"></span>Usar funcionalidades de IA que facilitan tareas rutinarias: autocompletar, sugerencias de escritura, respuestas automáticas.</li><li><span class="dot"></span>Creación y socialización de contenidos digitales propios y colaborativos usando herramientas con IA.</li></ul></div>
+        <div class="campo"><div class="campo-h"><span class="badge badge-pur">Matemática</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Oportunidades y desafíos de tecnologías digitales: big data, IA, robótica, vinculados a probabilidad y estadística.</li></ul></div>
+        <div class="campo"><div class="campo-h"><span class="badge badge-amb">Ciencias Sociales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Oportunidades y desafíos de la IA, robótica y realidad virtual comparados con avances tecnológicos históricos.</li></ul></div>
+        <div class="campo"><div class="campo-h"><span class="badge badge-cor">Educación Artística</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Edición fotográfica con IA: difuminado, eliminación de fondos, colorización, animación mediante prompts. Artes Visuales.</li><li><span class="dot"></span>Producción musical con IA: modelos generativos de audio. Música.</li><li><span class="dot"></span>Derechos de autor e IA en la creación artística. Cambios en producción y circulación cultural.</li></ul></div>
+        <div class="campo"><div class="campo-h"><span class="badge badge-pur">Tecnologías, Diseño y Programación</span><span class="ej ej-pc">PC, P y R</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Exploración de tecnologías emergentes: IA, realidad virtual, impresión 3D e impacto en la sociedad.</li><li><span class="dot"></span>Estereotipos corporales, de género y lingüísticos en el funcionamiento de la IA. Problematización del entrenamiento.</li><li><span class="dot"></span>Impacto de la IA y la automatización en la organización del trabajo.</li><li><span class="dot"></span>Uso de IA como asistente para resolver problemas de programación.</li></ul></div>
+      </div>
     </div>
-    <div id="seg-g67" class="card sub-panel">
-        <div class="card-body">
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-tea">Educación Digital (6.° y 7.°)</span><span class="ej ej-cd">Ciudadanía Digital</span></div>
-                <ul class="dot-list">
-                    <li>Funcionamiento básico de sistemas de IA conversacionales: evaluar tipo de resultado según cómo se formula la búsqueda.</li>
-                    <li>Funcionalidades de IA en recursos digitales: autocompletar, sugerencias de escritura, respuestas automáticas.</li>
-                    <li>Reconocimiento de la proliferación de información falsa y cómo inciden los sistemas de IA.</li>
-                    <li>Estrategias para reconocer la autoría de contenidos en internet, incluso los producidos por IA.</li>
-                    <li>Contenidos propios o colaborativos creados con IA.</li>
-                    <li>Oportunidades y desafíos: big data, IA, robótica, IoT, metaverso, ciberseguridad.</li>
-                </ul>
-            </div>
-        </div>
+
+    <!-- 7° grado -->
+    <div class="card sub-panel" id="seg-g7">
+      <div class="card-body">
+        <div class="campo"><div class="campo-h"><span class="badge badge-grn">Ciencias Naturales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Interacciones entre el campo científico y la IA. Reflexión sobre construcción y modificación del conocimiento científico.</li></ul></div>
+        <div class="campo"><div class="campo-h"><span class="badge badge-pur">Tecnologías, Diseño y Programación</span><span class="ej ej-pc">PC, P y R</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Resolver problemas de diseño que involucren plataformas e IA. Industria 4.0, robótica.</li><li><span class="dot"></span>Identifica problemas éticos en el desarrollo y uso de sistemas de IA. Reconoce tipos de sesgos en el entrenamiento automático.</li><li><span class="dot"></span>Proyectos avanzados: aprendizaje automático, redes neuronales, reconocimiento facial, chatbots.</li><li><span class="dot"></span>Usa IA generativa como asistente en producción de código. Habilidades para el uso efectivo de IA generativa.</li><li><span class="dot"></span>Problemas éticos en IA aplicada a procesos industriales: diseño inclusivo, entrenamiento libre de sesgos de género.</li></ul></div>
+        <div class="campo"><div class="campo-h"><span class="badge badge-blu">Lenguas adicionales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Funcionamiento básico de motores de búsqueda y sistemas de IA conversacionales. Evaluación de resultados según cómo se formula la búsqueda.</li></ul></div>
+      </div>
     </div>
-    <div id="seg-gtodos" class="card sub-panel">
-        <div class="card-body">
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-amb">Ciencias Sociales (todos los grados)</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-                <ul class="dot-list">
-                    <li>Herramientas de IA como soporte para actividades innovadoras. Fomento del pensamiento reflexivo y crítico sobre fiabilidad y validez de contenidos.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-cor">Educación Artística (todos los grados)</span><span class="ej ej-cd">Ciudadanía Digital</span></div>
-                <ul class="dot-list">
-                    <li>Herramientas para analizar y contextualizar discursos estéticos en redes sociales e industrias culturales mediados por IA.</li>
-                    <li>Interacción consciente con el ciberespacio y la IA en funciones comunicativas-estéticas. Derechos y responsabilidades.</li>
-                </ul>
-            </div>
-            <div class="campo">
-                <div class="campo-h"><span class="badge badge-pur">Tecnologías, Diseño y Programación (todos los grados)</span><span class="ej ej-pc">PC, P y R</span></div>
-                <ul class="dot-list">
-                    <li>Integrar la IA como asistente para diseño de prototipos e iterar soluciones. Desarrollo de lógica conversacional.</li>
-                    <li>Reflexión transversal sobre procesos tecnológicos y uso de la IA: propósitos de dispositivos y cómo involucran a los usuarios.</li>
-                    <li>Situaciones de aprendizaje con enfoque maker: diseño, herramientas digitales y asistencia de IA.</li>
-                </ul>
-            </div>
-        </div>
+
+    <!-- 6° y 7° ED -->
+    <div class="card sub-panel" id="seg-g67">
+      <div class="card-body">
+        <div class="campo"><div class="campo-h"><span class="badge badge-tea">Educación Digital (6° y 7°)</span><span class="ej ej-cd">Ciudadanía Digital</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Funcionamiento básico de sistemas de IA conversacionales: evaluar tipo de resultado según cómo se formula la búsqueda.</li><li><span class="dot"></span>Funcionalidades de IA en recursos digitales: autocompletar, sugerencias de escritura, respuestas automáticas.</li><li><span class="dot"></span>Reconocimiento de la proliferación de información falsa y cómo inciden los sistemas de IA.</li><li><span class="dot"></span>Estrategias para reconocer la autoría de contenidos en internet, incluso los producidos por IA.</li><li><span class="dot"></span>Contenidos propios o colaborativos creados con IA.</li><li><span class="dot"></span>Oportunidades y desafíos: big data, IA, robótica, IoT, metaverso, ciberseguridad.</li></ul></div>
+      </div>
     </div>
+
+    <!-- Todos los grados -->
+    <div class="card sub-panel" id="seg-gtodos">
+      <div class="card-body">
+        <div class="campo"><div class="campo-h"><span class="badge badge-amb">Ciencias Sociales (todos los grados)</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Herramientas de IA como soporte para actividades innovadoras. Fomento del pensamiento reflexivo y crítico sobre fiabilidad y validez de contenidos.</li></ul></div>
+        <div class="campo"><div class="campo-h"><span class="badge badge-cor">Educación Artística (todos los grados)</span><span class="ej ej-cd">Ciudadanía Digital</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Herramientas para analizar y contextualizar discursos estéticos en redes sociales e industrias culturales mediados por IA.</li><li><span class="dot"></span>Interacción consciente con el ciberespacio y la IA en funciones comunicativas-estéticas. Derechos y responsabilidades.</li></ul></div>
+        <div class="campo"><div class="campo-h"><span class="badge badge-pur">Tecnologías, Diseño y Programación (todos los grados)</span><span class="ej ej-pc">PC, P y R</span></div>
+          <ul class="dot-list"><li><span class="dot"></span>Integrar la IA como asistente para diseño de prototipos e iterar soluciones. Desarrollo de lógica conversacional.</li><li><span class="dot"></span>Reflexión transversal sobre procesos tecnológicos y uso de la IA: propósitos de dispositivos y cómo involucran a los usuarios.</li><li><span class="dot"></span>Situaciones de aprendizaje con enfoque maker: diseño, herramientas digitales y asistencia de IA.</li></ul></div>
+      </div>
+    </div>
+
     <div class="warn-box">
-        <p>En Segundo Ciclo la autonomía crece gradualmente. El docente mantiene su rol de mediador pedagógico en todo momento. En 6.° y 7.° se habilita mayor iniciativa estudiantil siempre dentro del entorno institucional seguro.</p>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2" style="flex-shrink:0;margin-top:1px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <p>En Segundo Ciclo la autonomía crece gradualmente. El docente mantiene su rol de mediador pedagógico en todo momento. En 6° y 7° se habilita mayor iniciativa estudiantil siempre dentro del entorno institucional seguro.</p>
     </div>
-</div>
+  </div>
 
-<div id="panel-etico" class="panel">
+  <!-- ══════════════════════════════════════════════════════ EJE ÉTICO -->
+  <div class="panel" id="panel-etico">
     <p class="etico-intro">Franja transversal a todos los grados. Cada principio se trabaja en conversación áulica, no como contenido aislado.</p>
-    <div class="principio">
-        <div class="principio-icon" style="background: #fffbeb;">🛡</div>
-        <div class="principio-body">
-            <div class="principio-head"><span class="principio-title">1. La IA es una herramienta, no una persona</span><span class="badge badge-blu">1.° a 7.°</span></div>
-            <p class="principio-desc">Diferenciar entre lo que produce una persona y lo que produce una máquina. La IA no piensa ni siente: procesa datos.</p>
-        </div>
-    </div>
-    <div class="principio">
-        <div class="principio-icon" style="background: #eff6ff;">🔒</div>
-        <div class="principio-body">
-            <div class="principio-head"><span class="principio-title">2. Mis datos son míos</span><span class="badge badge-blu">1.° a 7.°</span></div>
-            <p class="principio-desc">No compartir datos personales (nombre completo, foto, dirección ni contraseñas). Usar siempre cuentas institucionales. Ley N.° 25.326.</p>
-        </div>
-    </div>
-    <div class="principio">
-        <div class="principio-icon" style="background: #fef2f2;">🔍</div>
-        <div class="principio-body">
-            <div class="principio-head"><span class="principio-title">3. La IA puede equivocarse</span><span class="badge badge-blu">1.° a 7.°</span></div>
-            <p class="principio-desc">Lo que dice la IA no siempre es verdad. Hay que verificar con otras fuentes. Las "alucinaciones" son errores frecuentes. </p>
-        </div>
-    </div>
-    <div class="principio">
-        <div class="principio-icon" style="background: #f5f3ff;">⚙</div>
-        <div class="principio-body">
-            <div class="principio-head"><span class="principio-title">4. La IA aprende de lo que las personas escriben</span><span class="badge badge-tea">4.° a 7.°</span></div>
-            <p class="principio-desc">Si los textos contenían sesgos o errores, la IA los repite. Identificar sesgos de género, idioma y cultura. </p>
-        </div>
-    </div>
-    <div class="principio">
-        <div class="principio-icon" style="background: #ecfdf5;">✏</div>
-        <div class="principio-body">
-            <div class="principio-head"><span class="principio-title">5. Aclarar cuándo usé IA</span><span class="badge badge-tea">4.° a 7.°</span></div>
-            <p class="principio-desc">Indicar cómo y para qué usé IA. La autoría es un valor. </p>
-        </div>
-    </div>
-    <div class="principio">
-        <div class="principio-icon" style="background: var(--cor-bg);">🌐</div>
-        <div class="principio-body">
-            <div class="principio-head"><span class="principio-title">6. La IA tiene impacto en la sociedad</span><span class="badge badge-tea">6.° y 7.°</span></div>
-            <p class="principio-desc">Reflexionar sobre acceso desigual, impacto laboral y ambiental, deepfakes, big data. </p>
-        </div>
-    </div>
-    
+
+    <div class="principio"><div class="principio-icon" style="background:#fffbeb">🛡</div><div class="principio-body"><div class="principio-head"><span class="principio-title">1. La IA es una herramienta, no una persona</span><span class="badge badge-blu">1° a 7°</span></div><p class="principio-desc">Diferenciar entre lo que produce una persona y lo que produce una máquina. La IA no piensa ni siente: procesa datos.</p></div></div>
+
+    <div class="principio"><div class="principio-icon" style="background:#eff6ff">🔒</div><div class="principio-body"><div class="principio-head"><span class="principio-title">2. Mis datos son míos</span><span class="badge badge-blu">1° a 7°</span></div><p class="principio-desc">No compartir nombre completo, foto, dirección ni contraseñas. Usar siempre cuentas institucionales. Ley N.° 25.326.</p></div></div>
+
+    <div class="principio"><div class="principio-icon" style="background:#fef2f2">🔍</div><div class="principio-body"><div class="principio-head"><span class="principio-title">3. La IA puede equivocarse</span><span class="badge badge-blu">1° a 7°</span></div><p class="principio-desc">Lo que dice la IA no siempre es verdad. Hay que verificar con otras fuentes. Las "alucinaciones" son errores frecuentes. (DC: confiabilidad de fuentes, 4° a 7°.)</p></div></div>
+
+    <div class="principio"><div class="principio-icon" style="background:#f5f3ff">⚙</div><div class="principio-body"><div class="principio-head"><span class="principio-title">4. La IA aprende de lo que las personas escriben</span><span class="badge badge-tea">4° a 7°</span></div><p class="principio-desc">Si los textos contenían sesgos o errores, la IA los repite. Identificar sesgos de género, idioma y cultura. (DC: estereotipos en IA, 5° TDP; estereotipos corporales y lingüísticos, 6° TDP.)</p></div></div>
+
+    <div class="principio"><div class="principio-icon" style="background:#ecfdf5">✏</div><div class="principio-body"><div class="principio-head"><span class="principio-title">5. Aclarar cuándo usé IA</span><span class="badge badge-tea">4° a 7°</span></div><p class="principio-desc">Indicar qué partes fueron asistidas por IA. La autoría es un valor. (DC: derechos de autor y IA, 4° TDP; autoría en internet, 6° TDP; derechos en creación artística, 6° Ed. Artística.)</p></div></div>
+
+    <div class="principio"><div class="principio-icon" style="background:var(--cor-bg)">🌐</div><div class="principio-body"><div class="principio-head"><span class="principio-title">6. La IA tiene impacto en la sociedad</span><span class="badge badge-tea">6° y 7°</span></div><p class="principio-desc">Reflexionar sobre acceso desigual, impacto laboral y ambiental, deepfakes, big data. (DC: impacto de IA en organización del trabajo, 6° TDP; oportunidades y desafíos, 6° Cs. Sociales y Matemática; 7° TDP, ED y Cs. Naturales.)</p></div></div>
+
     <div class="preguntas-box">
-        <h3>❓ Preguntas orientadoras para el docente</h3>
-        <div class="preguntas-grid">
-            <div class="pregunta-item"><span class="pregunta-num">1</span><p>¿Cómo puedo distinguir lo que produje yo de lo que produjo la IA?</p></div>
-            <div class="pregunta-item"><span class="pregunta-num">2</span><p>¿Esta respuesta de la IA es verdadera? ¿Cómo lo comprobamos?</p></div>
-            <div class="pregunta-item"><span class="pregunta-num">3</span><p>¿La IA representó a todos por igual en esta imagen o texto?</p></div>
-            <div class="pregunta-item"><span class="pregunta-num">4</span><p>¿Qué datos le di a la IA? ¿Era necesario hacerlo?</p></div>
-            <div class="pregunta-item"><span class="pregunta-num">5</span><p>¿Qué pasaría si la IA tomara decisiones por nosotros? ¿En qué situaciones no queremos eso?</p></div>
-        </div>
+      <h3>❓ Preguntas orientadoras para el docente</h3>
+      <div class="preguntas-grid">
+        <div class="pregunta-item"><span class="pregunta-num">1</span><p>¿Cómo puedo distinguir lo que produje yo de lo que produjo la IA?</p></div>
+        <div class="pregunta-item"><span class="pregunta-num">2</span><p>¿Esta respuesta de la IA es verdadera? ¿Cómo lo comprobamos?</p></div>
+        <div class="pregunta-item"><span class="pregunta-num">3</span><p>¿La IA representó a todos por igual en esta imagen o texto?</p></div>
+        <div class="pregunta-item"><span class="pregunta-num">4</span><p>¿Qué datos le di a la IA? ¿Era necesario hacerlo?</p></div>
+        <div class="pregunta-item"><span class="pregunta-num">5</span><p>¿Qué pasaría si la IA tomara decisiones por nosotros? ¿En qué situaciones no queremos eso?</p></div>
+      </div>
     </div>
-</div>
+  </div>
 
-<div id="panel-rubrica" class="panel">
+  <!-- ══════════════════════════════════════════════════ RÚBRICA DOCENTE -->
+  <div class="panel" id="panel-rubrica">
     <p class="rubrica-intro">Instrumento orientador, no sumativo. Sirve para observar trayectorias y planificar intervenciones. Las habilidades están ancladas al DC 2024.</p>
-    
+
     <div class="sub-nav no-print">
-        <button class="sub-btn-rub active-r1" data-target="rub-r1">Primer Ciclo (1.°–3.°)</button> 
-        <button class="sub-btn-rub" data-target="rub-r2">Segundo ciclo (4.°–7.°)</button>
+      <button class="sub-btn-rub active-r1" onclick="showRubrica('r1',this)">Primer ciclo (1°–3°)</button>
+      <button class="sub-btn-rub" onclick="showRubrica('r2',this)">Segundo ciclo (4°–7°)</button>
     </div>
 
-    <div id="rub-r1" class="card sub-panel-rub active">
-        <div class="rub-head-pur">🎓 Primer Ciclo (1.° a 3.°)</div>
-        <div class="table-wrap">
-            <table class="rubrica-table">
-                <thead>
-                    <tr>
-                        <th>Habilidad</th>
-                        <th>Inicial</th>
-                        <th>En proceso</th>
-                        <th>Logrado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Reconocer la IA en el entorno</td>
-                        <td>Nombra dispositivos sin diferenciar IA.</td>
-                        <td>Identifica algunos ejemplos con ayuda.</td>
-                        <td>Señala y explica ejemplos de IA en su entorno cotidiano.</td>
-                    </tr>
-                    <tr>
-                        <td>Interactuar con herramientas de IA</td>
-                        <td>Observa sin participar.</td>
-                        <td>Participa en actividades guiadas con apoyo del docente.</td>
-                        <td>Formula preguntas o consignas simples a una herramienta de IA.</td>
-                    </tr>
-                    <tr>
-                        <td>Producir con IA</td>
-                        <td>Visualiza producciones generadas por IA.</td>
-                        <td>Participa en la creación colectiva asistida.</td>
-                        <td>Crea un producto sencillo (cuento, imagen) con mediación docente.</td>
-                    </tr>
-                    <tr>
-                        <td>Cuidado digital</td>
-                        <td>Conoce la norma pero no la aplica consistentemente.</td>
-                        <td>Aplica las normas con recordatorio.</td>
-                        <td>Aplica de forma autónoma: no comparte datos, usa cuenta institucional.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div class="card sub-panel active" id="rub-r1">
+      <div class="rub-head-pur">🎓 Primer ciclo (1° a 3°)</div>
+      <div class="table-wrap">
+        <table class="rubrica-table">
+          <thead><tr><th>Habilidad</th><th>Inicial</th><th>En proceso</th><th>Logrado</th></tr></thead>
+          <tbody>
+            <tr><td>Reconocer la IA en el entorno</td><td>Nombra dispositivos sin diferenciar IA.</td><td>Identifica algunos ejemplos con ayuda.</td><td>Señala y explica ejemplos de IA en su entorno cotidiano.</td></tr>
+            <tr><td>Interactuar con herramientas de IA</td><td>Observa sin participar.</td><td>Participa en actividades guiadas con apoyo del docente.</td><td>Formula preguntas o consignas simples a una herramienta de IA.</td></tr>
+            <tr><td>Producir con IA</td><td>Visualiza producciones generadas por IA.</td><td>Participa en la creación colectiva asistida.</td><td>Crea un producto sencillo (cuento, imagen) con mediación docente.</td></tr>
+            <tr><td>Cuidado digital</td><td>Conoce la norma pero no la aplica consistentemente.</td><td>Aplica las normas con recordatorio.</td><td>Aplica de forma autónoma: no comparte datos, usa cuenta institucional.</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
-    <div id="rub-r2" class="card sub-panel-rub">
-        <div class="rub-head-tea">🎓 Segundo Ciclo (4.° a 7.°)</div>
-        <div class="table-wrap">
-            <table class="rubrica-table">
-                <thead>
-                    <tr>
-                        <th style="width: 22%;">Habilidad (DC)</th>
-                        <th style="width: 10%;">Grado</th>
-                        <th style="width: 22%;">Inicial</th>
-                        <th style="width: 22%;">En proceso</th>
-                        <th style="width: 24%;">Logrado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Evaluar confiabilidad de fuentes con IA</td>
-                        <td><span class="ej ej-am">4.°–7.°</span></td>
-                        <td>Acepta la información de la IA sin verificar.</td>
-                        <td>Contrasta con otra fuente cuando se le indica.</td>
-                        <td>Evalúa procedencia y confiabilidad de forma autónoma.</td>
-                    </tr>
-                    <tr>
-                        <td>Diseñar y evaluar prompts</td>
-                        <td><span class="ej ej-am">5.°–7.°</span></td>
-                        <td>Usa la IA sin planificar la consulta.</td>
-                        <td>Formula preguntas con orientación y compara resultados.</td>
-                        <td>Diseña prompts específicos y evalúa pertinencia de la respuesta.</td>
-                    </tr>
-                    <tr>
-                        <td>Crear con IA en proyectos disciplinares</td>
-                        <td><span class="ej ej-am">4.°–7.°</span></td>
-                        <td>Usa el resultado sin editar ni integrar al proyecto.</td>
-                        <td>Adapta el resultado con guía docente.</td>
-                        <td>Integra la IA en una producción propia con propósito claro y declara su uso.</td>
-                    </tr>
-                    <tr>
-                        <td>Identificar sesgos y estereotipos</td>
-                        <td><span class="ej ej-cd">5.°–7.°</span></td>
-                        <td>No distingue sesgos en respuestas de IA.</td>
-                        <td>Señala estereotipos con orientación docente.</td>
-                        <td>Identifica y argumenta sesgos de género, idioma o cultura en resultados de IA.</td>
-                    </tr>
-                    <tr>
-                        <td>Reconocer impacto ético y social</td>
-                        <td><span class="ej ej-cd">6.°–7.°</span></td>
-                        <td>Percibe la IA como tecnología neutral.</td>
-                        <td>Reconoce algún impacto con apoyo.</td>
-                        <td>Analiza impactos en trabajo, derechos de autor, privacidad y ciudadanía digital.</td>
-                    </tr>
-                    <tr>
-                        <td>Usar IA en programación y robótica</td>
-                        <td><span class="ej ej-pc">6.°–7.°</span></td>
-                        <td>Observa sin participar en resolución con IA.</td>
-                        <td>Usa IA como asistente con acompañamiento.</td>
-                        <td>Usa IA para resolver problemas de diseño y evalúa críticamente el código sugerido.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div class="card sub-panel" id="rub-r2">
+      <div class="rub-head-tea">🎓 Segundo ciclo (4° a 7°)</div>
+      <div class="table-wrap">
+        <table class="rubrica-table">
+          <thead><tr><th style="width:22%">Habilidad (DC)</th><th style="width:10%">Grado</th><th style="width:22%">Inicial</th><th style="width:22%">En proceso</th><th style="width:24%">Logrado</th></tr></thead>
+          <tbody>
+            <tr><td>Evaluar confiabilidad de fuentes con IA</td><td><span class="ej ej-am">4°–7°</span></td><td>Acepta la información de la IA sin verificar.</td><td>Contrasta con otra fuente cuando se le indica.</td><td>Evalúa procedencia y confiabilidad de forma autónoma.</td></tr>
+            <tr><td>Diseñar y evaluar prompts</td><td><span class="ej ej-am">5°–7°</span></td><td>Usa la IA sin planificar la consulta.</td><td>Formula preguntas con orientación y compara resultados.</td><td>Diseña prompts específicos y evalúa pertinencia de la respuesta.</td></tr>
+            <tr><td>Crear con IA en proyectos disciplinares</td><td><span class="ej ej-am">4°–7°</span></td><td>Usa el resultado sin editar ni integrar al proyecto.</td><td>Adapta el resultado con guía docente.</td><td>Integra la IA en una producción propia con propósito claro y declara su uso.</td></tr>
+            <tr><td>Identificar sesgos y estereotipos</td><td><span class="ej ej-cd">5°–7°</span></td><td>No distingue sesgos en respuestas de IA.</td><td>Señala estereotipos con orientación docente.</td><td>Identifica y argumenta sesgos de género, idioma o cultura en resultados de IA.</td></tr>
+            <tr><td>Reconocer impacto ético y social</td><td><span class="ej ej-cd">6°–7°</span></td><td>Percibe la IA como tecnología neutral.</td><td>Reconoce algún impacto con apoyo.</td><td>Analiza impactos en trabajo, derechos de autor, privacidad y ciudadanía digital.</td></tr>
+            <tr><td>Usar IA en programación y robótica</td><td><span class="ej ej-pc">6°–7°</span></td><td>Observa sin participar en resolución con IA.</td><td>Usa IA como asistente con acompañamiento.</td><td>Usa IA para resolver problemas de diseño y evalúa críticamente el código sugerido.</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <div class="nota-ped">
-        <p class="slabel">Nota pedagógica</p>
-        <p>Esta rúbrica no evalúa el "buen uso" de la tecnología sino el desarrollo de competencias críticas ancladas al DC 2024. La progresión es personal y no lineal. Un estudiante en "inicial" está en una etapa del recorrido, no en déficit.</p>
+      <p class="slabel">Nota pedagógica</p>
+      <p>Esta rúbrica no evalúa el "buen uso" de la tecnología sino el desarrollo de competencias críticas ancladas al DC 2024. La progresión es personal y no lineal. Un estudiante en "inicial" está en una etapa del recorrido, no en déficit.</p>
     </div>
-</div>
+  </div>
+
+</main>
 
 <script>
-    // Lógica para alternar las Pestañas Principales
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const panels = document.querySelectorAll('.panel');
+// ── TAB NAVIGATION ──────────────────────────────────────────
+function showTab(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  const panel = document.getElementById('panel-' + id);
+  if (panel) panel.classList.add('active');
+  if (btn) btn.classList.add('active');
+}
 
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            panels.forEach(panel => panel.classList.remove('active'));
+// ── PRIMER CICLO GRADE NAV ───────────────────────────────────
+function showGradePC(id, btn) {
+  document.querySelectorAll('#panel-primer .sub-panel-pc').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('#panel-primer .sub-btn-pc').forEach(b => b.classList.remove('active-pc'));
+  const target = document.getElementById('pc-' + id);
+  if (target) target.classList.add('active');
+  if (btn) btn.classList.add('active-pc');
+}
 
-            button.classList.add('active');
-            const targetId = 'panel-' + button.dataset.tab;
-            document.getElementById(targetId).classList.add('active');
-        });
+// ── SEGUNDO CICLO GRADE NAV ──────────────────────────────────
+function showGrade(id, btn) {
+  document.querySelectorAll('#panel-segundo .sub-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('#panel-segundo .sub-btn').forEach(b => b.classList.remove('active'));
+  const target = document.getElementById('seg-' + id);
+  if (target) target.classList.add('active');
+  if (btn) btn.classList.add('active');
+}
+
+// ── RÚBRICA CYCLE NAV ────────────────────────────────────────
+function showRubrica(id, btn) {
+  document.querySelectorAll('#panel-rubrica .sub-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sub-btn-rub').forEach(b => b.classList.remove('active-r1', 'active-r2'));
+  const target = document.getElementById('rub-' + id);
+  if (target) target.classList.add('active');
+  if (btn) btn.classList.add('active-' + id);
+}
+
+// ── SEARCH ───────────────────────────────────────────────────
+const ENTRIES = [
+  {tab:'primer',grade:'g1',subject:'Tecnologías, Diseño y Programación',gradeLabel:'1° grado',keywords:'inteligencia artificial aplicaciones utilidades experimenta reconocimiento dibujos patrones reflexión procesos tecnológicos impacto vida personas recursos digitales experimentación'},
+  {tab:'primer',grade:'g2',subject:'Tecnologías, Diseño y Programación',gradeLabel:'2° grado',keywords:'automatización inteligencia artificial trabajo tareas repetitivas chatbots robots industriales reflexión procesos automatizados recursos digitales experimentación'},
+  {tab:'primer',grade:'g3',subject:'Conocimiento del Mundo',gradeLabel:'3° grado',keywords:'recursos digitales ia inteligencia artificial búsqueda información otras épocas experimentación reflexión crítica'},
+  {tab:'primer',grade:'g3',subject:'Teatro / Educación Artística',gradeLabel:'3° grado',keywords:'recursos digitales ia inteligencia artificial experimentación reflexión crítica teatro artística'},
+  {tab:'primer',grade:'g3',subject:'Tecnologías, Diseño y Programación',gradeLabel:'3° grado',keywords:'máquinas sistemas robots aprendizaje automático ia inteligencia artificial posibilidades riesgos características básicas cotidiana oportunidades desafíos entornos virtuales redes'},
+  {tab:'primer',grade:'gtodos',subject:'Educación Digital',gradeLabel:'Todos los grados',keywords:'navegar entornos digitales ia inteligencia artificial experimentación reflexión información recursos digitales'},
+  {tab:'segundo',grade:'g4',subject:'Ciencias Naturales',gradeLabel:'4° grado',keywords:'materiales implantes prótesis tecnológicas ia calidad de vida'},
+  {tab:'segundo',grade:'g4',subject:'Ciencias Sociales',gradeLabel:'4° grado',keywords:'accede indaga información digital herramientas sistemas ia'},
+  {tab:'segundo',grade:'g4',subject:'Educación Artística',gradeLabel:'4° grado',keywords:'creación resignificación imágenes ia prompts avatares artes visuales autores compositores música'},
+  {tab:'segundo',grade:'g4',subject:'Tecnologías, Diseño y Programación',gradeLabel:'4° grado',keywords:'comprende ia aplicaciones cotidianas buscadores algoritmos recomendación asistentes virtuales aprendizaje automático riesgos contenido falso derechos autor'},
+  {tab:'segundo',grade:'g5',subject:'Lengua',gradeLabel:'5° grado',keywords:'motores búsqueda chats ia prompts información ia generativa pertinencia especificidad'},
+  {tab:'segundo',grade:'g5',subject:'Matemática',gradeLabel:'5° grado',keywords:'fuentes estadística producida ia procedencia confiabilidad'},
+  {tab:'segundo',grade:'g5',subject:'Ciencias Naturales / Sociales',gradeLabel:'5° grado',keywords:'fuentes ia astros luna indagación digital herramientas ia'},
+  {tab:'segundo',grade:'g5',subject:'Ed. Artística / Ed. Física / Lenguas adicionales',gradeLabel:'5° grado',keywords:'divulgación artístico-cultural ia música espectáculos deportivas análisis lenguas adicionales'},
+  {tab:'segundo',grade:'g5',subject:'Tecnologías, Diseño y Programación',gradeLabel:'5° grado',keywords:'procesos humana ia sesgo algorítmico privacidad datos contenido falso ética'},
+  {tab:'segundo',grade:'g45',subject:'Educación Digital',gradeLabel:'4° y 5° (ED)',keywords:'investigar entornos digitales ia búsqueda selección validación fuentes gestionar información ia generación contenidos prácticas emergentes cultura digital riesgos contenidos falsos'},
+  {tab:'segundo',grade:'g6',subject:'Lengua',gradeLabel:'6° grado',keywords:'prompts datos ia generativa chat autocompletar sugerencias escritura respuestas automáticas contenidos digitales colaborativos'},
+  {tab:'segundo',grade:'g6',subject:'Matemática',gradeLabel:'6° grado',keywords:'big data ia robótica probabilidad estadística oportunidades desafíos'},
+  {tab:'segundo',grade:'g6',subject:'Ciencias Sociales',gradeLabel:'6° grado',keywords:'ia robótica realidad virtual avances tecnológicos históricos'},
+  {tab:'segundo',grade:'g6',subject:'Educación Artística',gradeLabel:'6° grado',keywords:'edición fotográfica ia difuminado fondos colorización animación prompts artes visuales producción musical modelos generativos derechos autor'},
+  {tab:'segundo',grade:'g6',subject:'Tecnologías, Diseño y Programación',gradeLabel:'6° grado',keywords:'tecnologías emergentes ia realidad virtual impresión 3d estereotipos corporales género lingüísticos trabajo automatización programación'},
+  {tab:'segundo',grade:'g7',subject:'Ciencias Naturales',gradeLabel:'7° grado',keywords:'interacciones campo científico ia construcción conocimiento'},
+  {tab:'segundo',grade:'g7',subject:'Tecnologías, Diseño y Programación',gradeLabel:'7° grado',keywords:'diseño plataformas ia industria 4.0 robótica problemas éticos sesgos redes neuronales reconocimiento facial chatbots ia generativa código diseño inclusivo género'},
+  {tab:'segundo',grade:'g7',subject:'Lenguas adicionales',gradeLabel:'7° grado',keywords:'motores búsqueda ia conversacionales evaluación resultados lenguas adicionales'},
+  {tab:'segundo',grade:'g67',subject:'Educación Digital',gradeLabel:'6° y 7° (ED)',keywords:'ia conversacionales búsqueda autocompletar sugerencias escritura información falsa autoría contenidos big data robótica iot metaverso ciberseguridad ciudadanía digital'},
+  {tab:'segundo',grade:'gtodos',subject:'Ciencias Sociales (todos los grados)',gradeLabel:'Todos los grados',keywords:'ia actividades innovadoras pensamiento reflexivo crítico fiabilidad validez'},
+  {tab:'segundo',grade:'gtodos',subject:'Educación Artística (todos los grados)',gradeLabel:'Todos los grados',keywords:'discursos estéticos redes sociales industrias culturales ia ciberespacio derechos responsabilidades'},
+  {tab:'segundo',grade:'gtodos',subject:'Tecnologías, Diseño y Programación (todos los grados)',gradeLabel:'Todos los grados',keywords:'ia asistente prototipos lógica conversacional procesos tecnológicos dispositivos maker diseño'},
+  {tab:'etico',grade:null,subject:'La IA es una herramienta, no una persona',gradeLabel:'1° a 7°',keywords:'herramienta persona máquina piensa siente procesa datos diferenciar'},
+  {tab:'etico',grade:null,subject:'Mis datos son míos',gradeLabel:'1° a 7°',keywords:'datos nombre foto dirección contraseñas cuentas institucionales privacidad ley 25326'},
+  {tab:'etico',grade:null,subject:'La IA puede equivocarse',gradeLabel:'1° a 7°',keywords:'ia error alucinaciones verdad verificar fuentes confiabilidad'},
+  {tab:'etico',grade:null,subject:'La IA aprende de lo que las personas escriben',gradeLabel:'4° a 7°',keywords:'sesgo estereotipos género idioma cultura entrenamiento ia aprende textos'},
+  {tab:'etico',grade:null,subject:'Aclarar cuándo usé IA',gradeLabel:'4° a 7°',keywords:'autoría declarar uso ia trabajo partes asistidas derechos autor'},
+  {tab:'etico',grade:null,subject:'La IA tiene impacto en la sociedad',gradeLabel:'6° y 7°',keywords:'impacto laboral ambiental deepfakes big data acceso desigual trabajo privacidad ia sociedad'},
+  {tab:'rubrica',grade:'r1',subject:'Reconocer la IA en el entorno',gradeLabel:'Primer ciclo',keywords:'reconocer ia entorno dispositivos señala explica cotidiano rúbrica'},
+  {tab:'rubrica',grade:'r1',subject:'Interactuar con herramientas de IA',gradeLabel:'Primer ciclo',keywords:'interactuar herramientas ia observa participa guiadas preguntas consignas'},
+  {tab:'rubrica',grade:'r1',subject:'Producir con IA',gradeLabel:'Primer ciclo',keywords:'producir ia producciones creación colectiva cuento imagen mediación docente'},
+  {tab:'rubrica',grade:'r1',subject:'Cuidado digital',gradeLabel:'Primer ciclo',keywords:'cuidado digital norma aplica datos cuenta institucional autónoma'},
+  {tab:'rubrica',grade:'r2',subject:'Evaluar confiabilidad de fuentes con IA',gradeLabel:'Segundo ciclo',keywords:'confiabilidad fuentes ia verificar evaluar procedencia autónoma'},
+  {tab:'rubrica',grade:'r2',subject:'Diseñar y evaluar prompts',gradeLabel:'Segundo ciclo',keywords:'prompts diseñar evaluar pertinencia respuesta ia consulta planificar'},
+  {tab:'rubrica',grade:'r2',subject:'Crear con IA en proyectos disciplinares',gradeLabel:'Segundo ciclo',keywords:'crear ia proyectos disciplinares resultado editar integrar declarar uso'},
+  {tab:'rubrica',grade:'r2',subject:'Identificar sesgos y estereotipos',gradeLabel:'Segundo ciclo',keywords:'sesgos estereotipos género idioma cultura ia distingue señala argumenta'},
+  {tab:'rubrica',grade:'r2',subject:'Reconocer impacto ético y social',gradeLabel:'Segundo ciclo',keywords:'impacto ético social trabajo derechos autor privacidad ciudadanía digital ia neutral'},
+  {tab:'rubrica',grade:'r2',subject:'Usar IA en programación y robótica',gradeLabel:'Segundo ciclo',keywords:'ia programación robótica diseño código evaluar críticamente asistente'},
+];
+
+const TAB_LABELS = {primer:'Primer ciclo',segundo:'Segundo ciclo',etico:'Eje ético',rubrica:'Rúbrica',mapa:'Mapa'};
+const TAB_COLORS = {primer:'badge-pur',segundo:'badge-tea',etico:'badge-amb',rubrica:'badge-slate',mapa:'badge-blu'};
+
+function escapeRe(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
+function hl(text, q){
+  if(!q) return escapeHtml(text);
+  return escapeHtml(text).replace(new RegExp('('+escapeRe(q)+')','gi'),'<mark>$1</mark>');
+}
+function escapeHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function doSearch(){
+  const q = document.getElementById('search-input').value.trim().toLowerCase();
+  const clearBtn = document.getElementById('search-clear');
+  const box = document.getElementById('search-results');
+  clearBtn.style.display = q ? 'block' : 'none';
+  if(q.length < 2){ box.classList.remove('show'); return; }
+  const results = ENTRIES.filter(e =>
+    e.keywords.includes(q) || e.subject.toLowerCase().includes(q) || (e.gradeLabel||'').toLowerCase().includes(q)
+  ).slice(0,9);
+  if(!results.length){
+    box.innerHTML = '<p class="search-empty">Sin resultados para <strong>"'+escapeHtml(q)+'"</strong></p>';
+  } else {
+    let html = '<p class="search-hint">'+results.length+' resultado'+(results.length!==1?'s':'')+'</p>';
+    results.forEach(e => {
+      html += `<button class="search-item" onclick="navigateTo('${e.tab}','${e.grade||''}')">
+        <div class="search-item-body">
+          <div class="search-item-meta">
+            <span class="badge ${TAB_COLORS[e.tab]}" style="font-size:10px">${TAB_LABELS[e.tab]}</span>
+            ${e.gradeLabel ? `<span style="font-size:10px;color:#64748b">${escapeHtml(e.gradeLabel)}</span>` : ''}
+          </div>
+          <p class="search-item-subject">${hl(e.subject, q)}</p>
+        </div>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>`;
     });
+    box.innerHTML = html;
+  }
+  box.classList.add('show');
+}
 
-    // Lógica para alternar Sub-pestañas de Primer Ciclo
-    const subBtnsPc = document.querySelectorAll('.sub-btn-pc');
-    const subPanelsPc = document.querySelectorAll('.sub-panel-pc');
+function navigateTo(tab, grade) {
+  // 1. Activar el panel de pestaña correcto
+  const tabBtn = document.querySelector(`.tab-btn[data-tab="${tab}"]`);
+  showTab(tab, tabBtn);
 
-    subBtnsPc.forEach(button => {
-        button.addEventListener('click', () => {
-            subBtnsPc.forEach(btn => btn.classList.remove('active-pc'));
-            subPanelsPc.forEach(panel => panel.classList.remove('active'));
+  // 2. Si hay grado, activar el sub-panel correspondiente
+  if (grade) {
+    if (tab === 'primer') {
+      const btn = document.querySelector(`#panel-primer .sub-btn-pc[onclick*="'${grade}'"]`);
+      showGradePC(grade, btn);
+    } else if (tab === 'segundo') {
+      const btn = document.querySelector(`#panel-segundo .sub-btn[onclick*="'${grade}'"]`);
+      showGrade(grade, btn);
+    } else if (tab === 'rubrica') {
+      const btn = document.querySelector(`#panel-rubrica .sub-btn-rub[onclick*="'${grade}'"]`);
+      showRubrica(grade, btn);
+    }
+  }
 
-            button.classList.add('active-pc');
-            document.getElementById(button.dataset.target).classList.add('active');
-        });
-    });
+  // 3. Cerrar búsqueda y subir al top
+  document.getElementById('search-results').classList.remove('show');
+  document.getElementById('search-input').value = '';
+  document.getElementById('search-clear').style.display = 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-    // Lógica para alternar Sub-pestañas de Segundo Ciclo
-    const subBtnsSeg = document.querySelectorAll('.sub-btn');
-    const subPanelsSeg = document.querySelectorAll('.sub-panel');
+function clearSearch(){
+  document.getElementById('search-input').value = '';
+  document.getElementById('search-clear').style.display = 'none';
+  document.getElementById('search-results').classList.remove('show');
+  document.getElementById('search-input').focus();
+}
 
-    subBtnsSeg.forEach(button => {
-        button.addEventListener('click', () => {
-            subBtnsSeg.forEach(btn => btn.classList.remove('active'));
-            subPanelsSeg.forEach(panel => panel.classList.remove('active'));
-
-            button.classList.add('active');
-            document.getElementById(button.dataset.target).classList.add('active');
-        });
-    });
-
-    // Lógica para alternar Sub-pestañas de Rúbricas
-    const subBtnsRub = document.querySelectorAll('.sub-btn-rub');
-    const subPanelsRub = document.querySelectorAll('.sub-panel-rub');
-
-    subBtnsRub.forEach(button => {
-        button.addEventListener('click', () => {
-            subBtnsRub.forEach(btn => btn.classList.remove('active-r1'));
-            subPanelsRub.forEach(panel => panel.classList.remove('active'));
-
-            button.classList.add('active-r1');
-            document.getElementById(button.dataset.target).classList.add('active');
-        });
-    });
+document.addEventListener('click', e => {
+  if(!document.querySelector('.search-wrap').contains(e.target))
+    document.getElementById('search-results').classList.remove('show');
+});
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') document.getElementById('search-results').classList.remove('show');
+});
 </script>
 </body>
 </html>
