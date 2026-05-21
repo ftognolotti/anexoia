@@ -145,6 +145,9 @@
   .warn-box { display:flex; align-items:flex-start; gap:12px; background:#fffbeb; border:1px solid #fde68a; border-radius:12px; padding:14px 16px; margin-top:20px; }
   .warn-box p { font-size:13px; color:#92400e; font-weight:500; line-height:1.5; }
 
+  /* Leyenda de profundización */
+  .leyenda-estrella { background:#f8fafc; color:#475569; border:1px solid #e2e8f0; padding:8px 12px; border-radius:8px; margin-top:16px; font-size:11px; display:inline-flex; align-items:center; gap:6px; font-weight:500; }
+
   /* skill badges in 1er ciclo */
   .area-chips { display:flex; flex-wrap:wrap; gap:5px; margin-top:12px; padding-top:12px; border-top:1px solid #f1f5f9; }
   .area-label { font-size:10px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:.06em; width:100%; }
@@ -229,10 +232,6 @@
     <input type="text" id="search-input" placeholder="Buscar por materia, grado, concepto…" autocomplete="off" oninput="doSearch()" onfocus="doSearch()">
     <button class="search-clear" id="search-clear" onclick="clearSearch()">×</button>
     <div class="search-results" id="search-results"></div>
-  </div>
-
-  <div style="background: var(--amb-bg); color: var(--amb-text); border: 1px solid var(--amb-border); padding: 12px; border-radius: 8px; margin-bottom: 20px; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
-    <span>⭐</span> <strong>Nota:</strong> Los contenidos marcados con una estrella corresponden a instancias de <em>Profundización / Ampliación Curricular</em>.
   </div>
 
   <nav class="tab-nav" role="tablist">
@@ -364,7 +363,7 @@
           </div>
           <ul class="dot-list">
             <li><span class="dot dot-pur"></span>Reflexiona sobre el empleo de procesos tecnológicos automatizados, la IA y su impacto en la vida de las personas.</li>
-            <li><span class="dot dot-pur"></span>Identifica examples de automatización e IA en el trabajo.</li>
+            <li><span class="dot dot-pur"></span>Identifica ejemplos de automatización e IA en el trabajo.</li>
             <li><span class="dot dot-pur"></span>Reconoce el rol de los procesos de automatización y el uso de la IA en el trabajo, en tareas repetitivas: chatbots y robots industriales. <span style="color: #E5C988;">⭐</span></li>
             <li><span class="dot dot-pur"></span>Indaga recursos digitales con IA como oportunidad para la experimentación y la reflexión crítica, en relación con los procesos de automatización.</li>
           </ul>
@@ -406,7 +405,7 @@
             <li><span class="dot dot-pur"></span>Identifica el uso de IA en algunas situaciones de la vida cotidiana.</li>
             <li><span class="dot dot-pur"></span>Reconoce posibilidades y riesgos de la inteligencia artificial. <span style="color: #E5C988;">⭐</span></li>
             <li><span class="dot dot-pur"></span>Indaga recursos digitales con IA como oportunidad para la experimentación y la reflexión crítica sobre estas tecnologías.</li>
-            <li><span class="dot dot-pur"></span>Identifica oportunidades y desafíos que proponen los entornos virtuales y tecnologías digitales, especialmente en relación con el uso de IA en situaciones cotidianas.</li>
+            <li><span class="dot dot-pur"></span>Identifica oportunidades y desafíos que proponen los entornos virtuales y tecnologías digitales, especialmente en relación con el uso de IA in situaciones cotidianas.</li>
           </ul>
         </div>
       </div>
@@ -426,6 +425,10 @@
           </ul>
         </div>
       </div>
+    </div>
+
+    <div class="leyenda-estrella">
+      <span>⭐</span> <strong>Nota:</strong> Los contenidos marcados con una estrella corresponden a instancias de <em>Profundización / Ampliación Curricular</em>.
     </div>
 
     <div class="warn-box" style="margin-top:16px">
@@ -491,7 +494,7 @@
     <div class="card sub-panel" id="seg-g45">
       <div class="card-body">
         <div class="campo"><div class="campo-h"><span class="badge badge-tea">Educación Digital (4.° y 5.°)</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list"><li><span class="dot"></span>Investiga en entornos digitales (incluso con IA) usando estrategias de búsqueda, selection y validación de fuentes.</li><li><span class="dot"></span>Gestiona información digital y contenidos propios o ajenos, incluyendo entornos que usan IA.</li><li><span class="dot"></span>Accede a sistemas de IA para generación de contenidos digitales. Reflexiona sobre características y desafíos.</li><li><span class="dot"></span>Reconoce prácticas emergentes de la cultura digital: interconexión y sistemas de IA, oportunidades y desafíos.</li><li><span class="dot"></span>Conoce los riesgos de usos no éticos (por ejemplo, la creación de contenidos falsos con IA). <span style="color: #E5C988;">⭐</span></li></ul></div>
+          <ul class="dot-list"><li><span class="dot"></span>Investiga en entornos digitales (incluso con IA) usando estrategias de búsqueda, selección y validación de fuentes.</li><li><span class="dot"></span>Gestiona información digital y contenidos propios o ajenos, incluyendo entornos que usan IA.</li><li><span class="dot"></span>Accede a sistemas de IA para generación de contenidos digitales. Reflexiona sobre características y desafíos.</li><li><span class="dot"></span>Reconoce prácticas emergentes de la cultura digital: interconexión y sistemas de IA, oportunidades y desafíos.</li><li><span class="dot"></span>Conoce los riesgos de usos no éticos (por ejemplo, la creación de contenidos falsos con IA). <span style="color: #E5C988;">⭐</span></li></ul></div>
       </div>
     </div>
 
@@ -509,7 +512,7 @@
         <div class="campo"><div class="campo-h"><span class="badge badge-amb">Ciencias Sociales</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
           <ul class="dot-list"><li><span class="dot"></span>Identifica oportunidades y desafíos de la IA, Robótica y realidad virtual comparados con avances tecnológicos históricos.</li></ul></div>
         <div class="campo"><div class="campo-h"><span class="badge badge-cor">Educación Artística</span><span class="ej ej-am">Alfabetizaciones Múltiples</span></div>
-          <ul class="dot-list"><li><span class="dot"></span>Edita imágenes con IA: difuminado, eliminación de fondos, colorización, animación mediante prompts. Artes Visuales. <span style="color: #E5C988;">⭐</span></li><li><span class="dot"></span>Produce musica con IA: modelos generativos de audio. Música.</li><li><span class="dot"></span>Conoce los derechos de autor e IA en la creación artística. Identifica los cambios en producción y circulación cultural.</li></ul></div>
+          <ul class="dot-list"><li><span class="dot"></span>Edita imágenes con IA: difuminado, eliminación de fondos, colorización, animación mediante prompts. Artes Visuales. <span style="color: #E5C988;">⭐</span></li><li><span class="dot"></span>Produce música con IA: modelos generativos de audio. Música.</li><li><span class="dot"></span>Conoce los derechos de autor e IA en la creación artística. Identifica los cambios en producción y circulación cultural.</li></ul></div>
         <div class="campo"><div class="campo-h"><span class="badge badge-pur">Tecnologías, Diseño y Programación</span><span class="ej ej-pc">PC, P y R</span></div>
           <ul class="dot-list"><li><span class="dot"></span>Explora tecnologías emergentes: IA, realidad virtual, impresión 3D y su impacto en la sociedad.</li><li><span class="dot"></span>Identifica la reproducción de estereotipos corporales, de género y lingüísticos en el funcionamiento de la IA. Problematiza su entrenamiento.</li><li><span class="dot"></span>Conoce el impacto de la IA y la automatización en la organización del trabajo.</li><li><span class="dot"></span>Usa IA como asistente para resolver problemas de Programación. <span style="color: #E5C988;">⭐</span></li></ul></div>
       </div>
@@ -607,6 +610,10 @@
         <div class="campo"><div class="campo-h"><span class="badge badge-pur">Tecnologías, Diseño y Programación (todos los grados)</span><span class="ej ej-pc">PC, P y R</span></div>
           <ul class="dot-list"><li><span class="dot"></span>Integra a la IA como asistente para diseño de prototipos e iterar soluciones. Desarrollo de lógica conversacional.</li><li><span class="dot"></span>Reflexiona sobre procesos tecnológicos y uso de la IA: propósitos de dispositivos y cómo involucran a los usuarios.</li><li><span class="dot"></span>Participa de situaciones de aprendizaje con enfoque maker: diseño, herramientas digitales y asistencia de IA.</li></ul></div>
       </div>
+    </div>
+
+    <div class="leyenda-estrella">
+      <span>⭐</span> <strong>Nota:</strong> Los contenidos marcados con una estrella corresponden a instancias de <em>Profundización / Ampliación Curricular</em>.
     </div>
 
     <div class="warn-box">
