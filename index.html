@@ -67,6 +67,7 @@
   .tab-btn[data-tab="primer"].active   { background:var(--pur-bg); color:var(--pur-text); }
   .tab-btn[data-tab="segundo"].active  { background:var(--tea-bg); color:var(--tea-text); }
   .tab-btn[data-tab="etico"].active    { background:#fffbeb; color:#92400e; }
+  .tab-btn[data-tab="pdi"].active      { background:#eff6ff; color:#1d4ed8; }
   .tab-btn[data-tab="rubrica"].active  { background:#f1f5f9; color:#334155; }
   .panel { display:none; }
   .panel.active { display:block; }
@@ -272,6 +273,10 @@
     <button class="tab-btn" data-tab="etico"   onclick="showTab('etico',this)"   role="tab">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
       Eje ético
+    </button>
+    <button class="tab-btn" data-tab="pdi" onclick="showTab('pdi',this)" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+      Eje Protección Digital
     </button>
     <button class="tab-btn" data-tab="rubrica" onclick="showTab('rubrica',this)" role="tab">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
@@ -675,31 +680,51 @@
   </div>
 
   <div class="panel" id="panel-etico">
-    <p class="etico-intro">Franja transversal a todos los grados. Cada principio se trabaja en conversación áulica, no como contenido aislado.</p>
+    <p class="etico-intro">Este eje se centra en la alfabetización conceptual para comprender cómo la inteligencia artificial impacta en nuestra cultura y sociedad. El objetivo es desmitificar la herramienta, pasando de una narrativa de "magia" a una de "mecánica", donde se reconoce que la IA no piensa ni siente, sino que procesa patrones de datos generados por humanos.</p>
 
-    <div class="principio"><div class="principio-icon" style="background:#fffbeb">🛡</div><div class="principio-body"><div class="principio-head"><span class="principio-title">1. La IA no tiene conciencia, intenciones ni emocionales.</span><span class="badge badge-blu">1.° a 7.°</span></div><p class="principio-desc">La IA no piensa ni siente: procesa datos. Aunque use un lenguaje natural o un tono cercano, es importante entender que esto es producto de un diseño creado para sostener la interacción.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#fffbeb">🧠</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Prevención del antropomorfismo</span><span class="badge badge-blu">1.° a 7.°</span></div><p class="principio-desc">Diferenciar claramente entre lo que produce una persona y lo que produce una máquina, reconociendo que la IA no tiene conciencia ni emociones.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#eff6ff">🔒</div><div class="principio-body"><div class="principio-head"><span class="principio-title">2. Los datos entrenan al sistema.</span><span class="badge badge-blu">1.° a 7.°</span></div><p class="principio-desc">No se trata solo de no compartir datos personales por seguridad, sino de entender que todo lo que escribimos es utilizado para seguir entrenando el modelo.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#eff6ff">⚙</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Desmitificación</span><span class="badge badge-blu">1.° a 7.°</span></div><p class="principio-desc">Entender que la IA no "sabe" ni "entiende", sino que identifica patrones y calcula probabilidades.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#fef2f2">🔍</div><div class="principio-body"><div class="principio-head"><span class="principio-title">3. La IA prioriza patrones, no la verdad.</span><span class="badge badge-blu">1.° a 7.°</span></div><p class="principio-desc"> La IA genera respuestas basadas en cálculos de probabilidad. Las "alucinaciones" ocurren porque el sistema prioriza completar un patrón de texto por sobre la veracidad de los hechos. Siempre hay que verificar con otras fuentes. </p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#f5f3ff">🔍</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Sesgos y estereotipos</span><span class="badge badge-tea">4.° a 7.°</span></div><p class="principio-desc">Observar, con guía docente, si la IA representa a todos por igual en sus respuestas.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#f5f3ff">⚙</div><div class="principio-body"><div class="principio-head"><span class="principio-title">4. La IA reproduce los sesgos de los datos con los que fue entrenada.</span><span class="badge badge-tea">4.° a 7.°</span></div><p class="principio-desc">La IA no es una entidad neutral. Aprende de datos creados por personas. Si esos datos tienen prejuicios (racismo, sexismo, estereotipos).</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:#ecfdf5">✏</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Transparencia y valor de la autoría</span><span class="badge badge-tea">4.° a 7.°</span></div><p class="principio-desc">Promover la responsabilidad de declarar el uso de la IA en las producciones, reconociendo la autoría humana como valor central.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:#ecfdf5">✏</div><div class="principio-body"><div class="principio-head"><span class="principio-title">5. Valorar la autoría y la transparencia.</span><span class="badge badge-tea">4.° a 7.°</span></div><p class="principio-desc">Es fundamental declarar el uso de IA porque la autoría humana es un valor central. Se debe diferenciar claramente qué parte del trabajo es producción propia y cuál es un resultado generado por cálculos matemáticos.</p></div></div>
+    <div class="principio"><div class="principio-icon" style="background:var(--cor-bg)">🌐</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Impacto social</span><span class="badge badge-tea">4.° a 7.°</span></div><p class="principio-desc">Reflexionar acerca de cómo la automatización y la IA transforman las tareas, identificando cuándo la mirada humana es irremplazable.</p></div></div>
 
-    <div class="principio"><div class="principio-icon" style="background:var(--cor-bg)">🌐</div><div class="principio-body"><div class="principio-head"><span class="principio-title">6. La IA no reemplaza el vínculo humano.</span><span class="badge badge-tea">4.° a 7.°</span></div><p class="principio-desc">La tecnología no puede comprender las experiencias humanas ni reemplazar el acompañamiento pedagógico. La escuela es el espacio para construir conocimiento colectivo y fortalecer vínculos entre personas.</p></div></div>
-
-    <div class="principio"><div class="principio-icon" style="background:var(--cor-bg)">⚙️</div><div class="principio-body"><div class="principio-head"><span class="principio-title">7. De la magia a la mecánica.</span><span class="badge badge-cor">4.° a 7.°</span></div><p class="principio-desc">Toda interacción con la IA debe ser vista como un proceso de software y no como un acto de "inteligencia" mágica. Entender que detrás de una respuesta coherente hay cálculos matemáticos y procesamiento de datos, ayuda a quitarle el aura de "oráculo infalible".</p></div></div>   
-    
-   <div class="preguntas-box">
-      <h3>❓ Preguntas orientadoras para el docente</h3>
+    <div class="preguntas-box">
+      <h3>Preguntas disparadoras para docentes</h3>
       <div class="preguntas-grid">
-        <div class="pregunta-item"><span class="pregunta-num">1</span><p>¿Cómo puedo distinguir lo que produje yo de lo que produjo la IA? ¿En qué momentos de este proyecto la IA fue solo un asistente y en qué momentos nosotros tomamos las decisiones importantes?</p></div>
-        <div class="pregunta-item"><span class="pregunta-num">2</span><p>¿Esta respuesta de la IA es verdadera? ¿Cómo lo comprobamos? ¿Cómo generó la respuesta: está buscando la verdad o está completando un patrón estadístico?</p></div>
-        <div class="pregunta-item"><span class="pregunta-num">3</span><p>¿La IA representó a todos por igual en esta imagen o texto? ¿Qué datos, personas o perspectivas faltan en la imagen o texto que generó la IA?</p></div>
-        <div class="pregunta-item"><span class="pregunta-num">4</span><p>¿Qué datos le di a la IA? ¿Era necesario hacerlo?</p></div>
-        <div class="pregunta-item"><span class="pregunta-num">5</span><p>¿Qué pasaría si la IA tomara decisiones por nosotros? ¿En qué situaciones no queremos eso?</p></div>
-       <div class="pregunta-item"><span class="pregunta-num">6</span><p>¿El hecho de que la IA sea amable o parezca que nos comprende significa que tiene sentimientos, o es parte de su programación para que sigamos usándola?</p></div>
+        <div class="pregunta-item"><span class="pregunta-num">1</span><p>¿Qué valor tiene un dibujo o un cuento hecho totalmente por una persona en comparación con uno generado por una máquina en pocos segundos?</p></div>
+        <div class="pregunta-item"><span class="pregunta-num">2</span><p>¿Podría una IA ser un buen médico o un buen docente? ¿Qué le faltaría a la máquina para cuidar o enseñar como lo hace una persona?</p></div>
+        <div class="pregunta-item"><span class="pregunta-num">3</span><p>¿Qué pasaría si la IA tomara decisiones importantes por nosotros, como elegir a qué jugar o quién debe ser el abanderado? ¿En qué situaciones no queremos que una máquina decida?</p></div>
+        <div class="pregunta-item"><span class="pregunta-num">4</span><p>¿La IA representó a todas las personas por igual en esta imagen, por ejemplo, diferentes profesiones, géneros o colores de piel?</p></div>
+        <div class="pregunta-item"><span class="pregunta-num">5</span><p>¿Por qué a veces la IA inventa datos o "alucina"? ¿Qué riesgos corremos si confiamos ciegamente en lo que nos responde?</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-pdi">
+    <p class="etico-intro">La Protección Digital Infantil y Adolescente (PDIyA) es una línea estratégica prioritaria del Ministerio de Educación de la Ciudad de Buenos Aires, enmarcada en el Plan «Buenos Aires Aprende» (2024-2027) y el Diseño Curricular de Educación Digital. Su objetivo es garantizar condiciones de seguridad, bienestar y ejercicio pleno de derechos para niños y adolescentes dentro de los entornos digitales.</p>
+    <p class="etico-intro">Este eje es transversal y busca mitigar los riesgos de los sistemas digitales. Si bien no se promueve un uso autónomo de la IA, la escuela debe actuar como un espacio de alfabetización digital que dé herramientas para la vida cotidiana. Se trata de convertir a la tecnología en objeto de estudio para que los niños identifiquen cómo sus datos y su integridad pueden verse afectados, incluso en interacciones guiadas o en usos recreativos fuera de la escuela.</p>
+
+    <div class="principio"><div class="principio-icon" style="background:#eff6ff">🔒</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Resguardo de la privacidad</span><span class="badge badge-blu">1.° a 7.°</span></div><p class="principio-desc">Comprender que, en cualquier interacción, los sistemas de IA procesan información para entrenar sus modelos. Aplicar el criterio “Mis datos son míos” para entender que no se deben ingresar nombres, fotos o secretos, ya que la IA no “olvida” ni “entiende” la privacidad humana.</p></div></div>
+
+    <div class="principio"><div class="principio-icon" style="background:#fef2f2">⚠</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Alucinaciones como fallas mecánicas</span><span class="badge badge-blu">1.° a 7.°</span></div><p class="principio-desc">La IA no “sabe” la verdad: completa patrones estadísticos.</p></div></div>
+
+    <div class="principio"><div class="principio-icon" style="background:#fffbeb">🧩</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Detección de trucos y engaños</span><span class="badge badge-tea">4.° a 7.°</span></div><p class="principio-desc">Identificar que los sistemas pueden ser “engañados” o manipulados para romper sus reglas de seguridad. La tecnología es un software manipulable, no una entidad infalible o mágica.</p></div></div>
+
+    <div class="principio"><div class="principio-icon" style="background:var(--cor-bg)">🛡</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Creación de contenidos violentos</span><span class="badge badge-tea">4.° a 7.°</span></div><p class="principio-desc">Analizar las consecuencias de generar imágenes hiperrealistas o textos falsos (deepfakes) para hostigar o excluir a compañeros, reforzando que la violencia digital tiene consecuencias reales en los vínculos físicos.</p></div></div>
+
+    <div class="principio"><div class="principio-icon" style="background:#ecfdf5">⏱</div><div class="principio-body"><div class="principio-head"><span class="principio-title">Prevención de sobreexposición</span><span class="badge badge-tea">4.° a 7.°</span></div><p class="principio-desc">Reconocer que muchas aplicaciones usan IA para “atraparnos” mediante recomendaciones personalizadas, promoviendo el equilibrio entre el tiempo digital y el movimiento físico para un desarrollo saludable.</p></div></div>
+
+    <div class="preguntas-box">
+      <h3>Preguntas orientadoras para el docente</h3>
+      <div class="preguntas-grid">
+        <div class="pregunta-item"><span class="pregunta-num">1</span><p>¿Por qué la IA nos pide información para dejarnos jugar? ¿A dónde van esos datos?</p></div>
+        <div class="pregunta-item"><span class="pregunta-num">2</span><p>Si la IA inventa una respuesta (alucinación), ¿podemos confiar en lo que nos dice sobre las personas?</p></div>
+        <div class="pregunta-item"><span class="pregunta-num">3</span><p>¿Cómo podemos saber si la persona que nos escribe en un juego o red social es real o es un programa de IA tratando de imitar a un humano?</p></div>
+        <div class="pregunta-item"><span class="pregunta-num">4</span><p>¿Qué sentirías si alguien usa una foto tuya para crear una imagen falsa con IA?</p></div>
       </div>
     </div>
   </div>
@@ -758,7 +783,7 @@ function normalizeMainPanels() {
   const main = document.querySelector('main');
   if (!main) return;
 
-  ['panel-mapa', 'panel-primer', 'panel-segundo', 'panel-etico', 'panel-rubrica'].forEach(id => {
+  ['panel-mapa', 'panel-primer', 'panel-segundo', 'panel-etico', 'panel-pdi', 'panel-rubrica'].forEach(id => {
     const panel = document.getElementById(id);
     if (panel && panel.parentElement !== main) main.appendChild(panel);
   });
@@ -850,6 +875,10 @@ const ENTRIES = [
   {tab:'etico',grade:null,subject:'La IA aprende de lo que las personas escriben',gradeLabel:'4.° a 7.°',keywords:'sesgo estereotipos género idioma cultura entrenamiento ia aprende textos'},
   {tab:'etico',grade:null,subject:'Aclarar cuándo usé IA',gradeLabel:'4.° a 7.°',keywords:'autoría declarar uso ia trabajo partes asistidas derechos autor'},
   {tab:'etico',grade:null,subject:'La IA tiene impacto en la sociedad',gradeLabel:'6.° y 7.°',keywords:'impacto laboral ambiental deepfakes big data acceso desigual trabajo privacidad ia sociedad'},
+  {tab:'pdi',grade:null,subject:'Protección Digital Infantil y Adolescente',gradeLabel:'1.° a 7.°',keywords:'protección digital infantil adolescente privacidad datos seguridad bienestar derechos entornos digitales'},
+  {tab:'pdi',grade:null,subject:'Resguardo de la privacidad',gradeLabel:'1.° a 7.°',keywords:'mis datos son míos privacidad nombres fotos secretos ia no olvida'},
+  {tab:'pdi',grade:null,subject:'Trucos, engaños y violencia digital',gradeLabel:'4.° a 7.°',keywords:'engaños manipulación deepfakes contenidos violentos hostigar excluir violencia digital'},
+  {tab:'pdi',grade:null,subject:'Prevención de sobreexposición',gradeLabel:'4.° a 7.°',keywords:'sobreexposición recomendaciones personalizadas tiempo digital movimiento físico desarrollo saludable'},
   {tab:'rubrica',grade:'r1',subject:'Reconocer la IA en el entorno',gradeLabel:'Primer Ciclo',keywords:'reconocer ia entorno dispositivos señala explica cotidiano rúbrica'},
   {tab:'rubrica',grade:'r1',subject:'Interactuar con herramientas de IA',gradeLabel:'Primer Ciclo',keywords:'interactuar herramientas ia observa participa guiadas preguntas consignas'},
   {tab:'rubrica',grade:'r1',subject:'Producir con IA',gradeLabel:'Primer Ciclo',keywords:'producir ia producciones creación colectiva cuento imagen mediación docente'},
@@ -862,8 +891,8 @@ const ENTRIES = [
   {tab:'rubrica',grade:'r2',subject:'Usar IA en programación y robótica',gradeLabel:'Segundo Ciclo',keywords:'ia programación robótica diseño código evaluar críticamente asistente'},
 ];
 
-const TAB_LABELS = {primer:'Primer Ciclo',segundo:'Segundo Ciclo',etico:'Eje ético',rubrica:'Rúbrica',mapa:'Mapa'};
-const TAB_COLORS = {primer:'badge-pur',segundo:'badge-tea',etico:'badge-amb',rubrica:'badge-slate',mapa:'badge-blu'};
+const TAB_LABELS = {primer:'Primer Ciclo',segundo:'Segundo Ciclo',etico:'Eje ético',pdi:'Eje Protección Digital',rubrica:'Rúbrica',mapa:'Mapa'};
+const TAB_COLORS = {primer:'badge-pur',segundo:'badge-tea',etico:'badge-amb',pdi:'badge-blu',rubrica:'badge-slate',mapa:'badge-blu'};
 
 function escapeRe(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
 function hl(text, q){
