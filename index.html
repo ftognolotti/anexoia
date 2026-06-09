@@ -9,13 +9,19 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --pur-bg:#EEEDFE; --pur-text:#3C3489; --pur-border:#AFA9EC;
-    --tea-bg:#E1F5EE; --tea-text:#085041; --tea-border:#5DCAA5;
-    --blu-bg:#E6F1FB; --blu-text:#0C447C; --blu-border:#A8CCF0;
-    --amb-bg:#FAEEDA; --amb-text:#633806; --amb-border:#E5C988;
-    --cor-bg:#FAECE7; --cor-text:#712B13; --cor-border:#E5A98C;
-    --grn-bg:#EAF3DE; --grn-text:#27500A; --grn-border:#9CCC65;
-    --radius:10px; --shadow:0 1px 4px rgba(0,0,0,.08);
+    --amarillo:#FFCC00;
+    --azul-oscuro:#153244;
+    --celeste:#8DE2D6;
+    --blanco:#FFFFFF;
+    --negro:#3C3C3B;
+    --fucsia:#FF66C4;
+    --pur-bg:#FFFFFF; --pur-text:#153244; --pur-border:#FF66C4;
+    --tea-bg:#8DE2D6; --tea-text:#153244; --tea-border:#153244;
+    --blu-bg:#8DE2D6; --blu-text:#153244; --blu-border:#153244;
+    --amb-bg:#FFCC00; --amb-text:#153244; --amb-border:#153244;
+    --cor-bg:#FF66C4; --cor-text:#153244; --cor-border:#153244;
+    --grn-bg:#FFFFFF; --grn-text:#153244; --grn-border:#8DE2D6;
+    --radius:10px; --shadow:0 1px 4px rgba(21,50,68,.12);
     font-family:'Archivo',sans-serif;
   }
   body { background:#f8fafc; color:#1e293b; font-size:17px; line-height:1.55; }
@@ -206,6 +212,68 @@
 
   /* ── SVG ICONS ── */
   svg { display:inline-block; }
+
+
+  /* Paleta institucional */
+  body { background:var(--blanco); color:var(--negro); }
+  header { background:var(--blanco); border-bottom-color:var(--celeste); }
+  header h1 { color:var(--azul-oscuro); }
+  header .meta, header .sub { color:var(--negro); }
+  .tab-nav, .card, .search-wrap input, .search-results, .pregunta-item, .nota-ped, .ejes-dig {
+    background:var(--blanco);
+    border-color:var(--celeste);
+  }
+  .tab-btn { color:var(--azul-oscuro); }
+  .tab-btn:hover { background:rgba(141,226,214,.28); }
+  .tab-btn[data-tab="mapa"].active,
+  .tab-btn[data-tab="segundo"].active,
+  .tab-btn[data-tab="pdi"].active,
+  .tab-btn[data-tab="docs"].active,
+  .tab-btn[data-tab="secuencias"].active,
+  .tab-btn[data-tab="anexo"].active {
+    background:var(--celeste);
+    color:var(--azul-oscuro);
+  }
+  .tab-btn[data-tab="primer"].active,
+  .tab-btn[data-tab="etico"].active {
+    background:var(--amarillo);
+    color:var(--azul-oscuro);
+  }
+  .tab-btn[data-tab="rubrica"].active {
+    background:var(--fucsia);
+    color:var(--azul-oscuro);
+  }
+  .badge-slate, .chip { background:var(--blanco); color:var(--azul-oscuro); border-color:var(--celeste); }
+  .btn-print, .sub-btn, .sub-btn-rub, .sub-btn-pc { background:var(--blanco); color:var(--azul-oscuro); border-color:var(--celeste); }
+  .btn-print:hover, .sub-btn:hover, .sub-btn-rub:hover, .sub-btn-pc:hover, .search-item:hover { background:rgba(141,226,214,.24); }
+  .cycle-card, .principio { border-color:var(--celeste); }
+  .cycle-card.pur .cycle-card-head, .rub-head-pur { background:var(--amarillo); color:var(--azul-oscuro); border-color:var(--azul-oscuro); }
+  .cycle-card.tea .cycle-card-head, .rub-head-tea { background:var(--celeste); color:var(--azul-oscuro); border-color:var(--azul-oscuro); }
+  .cycle-num { color:var(--azul-oscuro) !important; }
+  .info-box { background:rgba(141,226,214,.26); border-color:var(--celeste); }
+  .info-box svg, .info-box p { color:var(--azul-oscuro); }
+  .warn-box { background:rgba(255,204,0,.2); border-color:var(--amarillo); }
+  .warn-box p { color:var(--azul-oscuro); }
+  .preguntas-box { background:rgba(141,226,214,.2); border-color:var(--celeste); }
+  .pregunta-num { background:var(--amarillo); color:var(--azul-oscuro); }
+  .principio-title, .rubrica-table td:first-child, .preguntas-box h3, .search-item-subject, .cycle-row h4 { color:var(--azul-oscuro); }
+  .principio-desc, .rubrica-table td, .rubrica-intro, .etico-intro, .cycle-row p, .pregunta-item p, .nota-ped p, .search-item-preview { color:var(--negro); }
+  .principio-icon { color:var(--azul-oscuro); }
+  .rubrica-table th { background:var(--azul-oscuro); color:var(--blanco); border-bottom-color:var(--celeste); }
+  .rubrica-table td:last-child { background:rgba(141,226,214,.22); color:var(--azul-oscuro); }
+  .dot { background:var(--azul-oscuro); }
+  .dot-pur { background:var(--fucsia); }
+  .dot-list li .star { color:var(--fucsia); }
+  mark { background:var(--amarillo); color:var(--azul-oscuro); }
+
+
+  .search-wrap { margin-left:auto; }
+  .docs-card { margin-top:16px; }
+  .doc-link { color:var(--azul-oscuro); font-weight:700; text-decoration:none; }
+  .doc-link:hover { color:var(--fucsia); text-decoration:underline; }
+  .doc-link-muted { color:var(--negro); }
+  .doc-desc { font-size:13px; color:var(--negro); line-height:1.55; margin-top:2px; }
+
 </style>
 </head>
 <body>
@@ -260,20 +328,31 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
       Rúbrica docente
     </button>
-  </nav>
+    <button class="tab-btn" data-tab="docs" onclick="showTab('docs',this)" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/></svg>
+      Documentos complementarios
+    </button>
+    <button class="tab-btn" data-tab="secuencias" onclick="showTab('secuencias',this)" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6a2 2 0 0 1-2-1.5z"/><path d="M8 7h8"/><path d="M8 11h8"/></svg>
+      Secuencias didácticas
+    </button>
+    <button class="tab-btn" data-tab="anexo" onclick="showTab('anexo',this)" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="M5 8h14"/><path d="M7 16h10"/></svg>
+      Anexo IA
+    </button>  </nav>
 
   <div class="panel active" id="panel-mapa">
 <div style="
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: #FFFFFF;
+  border: 1px solid #8DE2D6;
   border-radius: 16px;
   padding: 28px 32px;
   margin-bottom: 28px;
-  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  box-shadow: 0 1px 4px rgba(21,50,68,.12);
   text-align: center;
 ">
   <p style="
-    color: #475569;
+    color: #3C3C3B;
     font-size: 17px;
     line-height: 1.7;
     max-width: 760px;
@@ -807,6 +886,69 @@
     </div>
   </div>
 
+
+  <div class="panel" id="panel-docs">
+    <p class="rubrica-intro">Materiales de consulta para ampliar orientaciones, marcos de referencia y recursos de implementación vinculados al trabajo pedagógico con inteligencia artificial.</p>
+
+    <div class="card">
+      <div class="rub-head-tea">Orientaciones pedagógicas y de gestión curricular</div>
+      <div class="card-body">
+        <div class="campo">
+          <div class="campo-h"><a class="doc-link" href="https://educaciondigital.bue.edu.ar/recursos/ia-en-la-escuela-guia-para-un-uso-critico?id=f38fe68f-3ef7-4443-8c48-5d9cf214baff" target="_blank" rel="noopener">IA en la escuela: Guía para un uso crítico</a></div>
+          <p class="doc-desc">Proporciona a los equipos docentes marcos de referencia y criterios claros para una incorporación de la IA ética, segura y pedagógicamente pertinente. Funciona como hoja de ruta práctica para integrar estas herramientas de manera responsable y con enfoque de cuidado y protección digital.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><a class="doc-link" href="https://educaciondigital.bue.edu.ar/recursos/cambiar-la-narrativa-uso-consciente-de-la-ia?id=192ad59b-3091-4515-928f-9097e70158c5" target="_blank" rel="noopener">Cambiar la narrativa: uso consciente de la IA</a></div>
+          <p class="doc-desc">Ofrece orientaciones y herramientas para abordar la inteligencia artificial en el aula desde una perspectiva de comprensión crítica de su funcionamiento técnico y de prevención de la humanización de estos sistemas.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><a class="doc-link" href="https://educaciondigital.bue.edu.ar/recursos/marco-de-gobernanza-y-uso-responsable-de-la-inteligencia-artificial?id=72f6b77b-109d-492f-8359-268c1b3618dd" target="_blank" rel="noopener">Marco de gobernanza y uso responsable de la IA</a></div>
+          <p class="doc-desc">Presenta un marco integral para orientar la incorporación de tecnologías basadas en IA de manera ética, equitativa y pedagógicamente pertinente. Define estructuras de gestión institucional y niveles de intervención humana para decisiones potenciadas por IA.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><a class="doc-link" href="https://educaciondigital.bue.edu.ar/recursos/plan-de-bialfabetizacion-potenciado-por-ia?id=27b71d77-784e-4619-8f2e-09441ed87825" target="_blank" rel="noopener">Plan de Bialfabetización potenciado por IA</a></div>
+          <p class="doc-desc">Marco programático que integra la lectura y escritura tradicional con las nuevas competencias digitales y algorítmicas.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card docs-card">
+      <div class="rub-head-pur">Recursos para la implementación en el aula</div>
+      <div class="card-body">
+        <div class="campo">
+          <div class="campo-h"><a class="doc-link" href="https://educaciondigital.bue.edu.ar/recursos/ia-en-el-aula-experiencias-pedagogicas-con-inteligencia-artificial-en-las-escuelas-de-la-ciudad?id=711f97d1-9a3f-4153-adab-63fcc00835f3" target="_blank" rel="noopener">IA en el aula</a></div>
+          <p class="doc-desc">Presenta y sistematiza experiencias pedagógicas con inteligencia artificial llevadas adelante en escuelas de distintos niveles de la Ciudad de Buenos Aires.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><a class="doc-link" href="https://educaciondigital.bue.edu.ar/recursos/recursero-ia?id=e63f944c-d0ed-4681-8792-cfff30175d1d" target="_blank" rel="noopener">Recursero IA</a></div>
+          <p class="doc-desc">Guía interactiva con recursos de inteligencia artificial generativa organizados según su propósito, como creación de imágenes, elaboración de presentaciones y chatbots, entre otros.</p>
+        </div>
+        <div class="campo">
+          <div class="campo-h"><span class="doc-link doc-link-muted">Kit para escuelas</span></div>
+          <p class="doc-desc">PROXIMAMENTE</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-secuencias">
+    <p class="rubrica-intro">Espacio para organizar propuestas de enseñanza, recorridos de aula y actividades secuenciadas por ciclo o grado.</p>
+    <div class="card"><div class="card-body">
+      <div class="campo"><div class="campo-h"><span class="badge badge-amb">Secuencias didácticas</span></div>
+        <ul class="dot-list"><li><span class="dot"></span>Agregar aquí secuencias didácticas o propuestas de implementación.</li></ul>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="panel" id="panel-anexo">
+    <p class="rubrica-intro">Espacio para incorporar el anexo de IA y sus materiales asociados.</p>
+    <div class="card"><div class="card-body">
+      <div class="campo"><div class="campo-h"><span class="badge badge-cor">Anexo IA</span></div>
+        <ul class="dot-list"><li><span class="dot"></span>Agregar aquí el contenido o enlace del Anexo IA.</li></ul>
+      </div>
+    </div></div>
+  </div>
+
 </main>
 
 <script>
@@ -815,7 +957,7 @@ function normalizeMainPanels() {
   const main = document.querySelector('main');
   if (!main) return;
 
-  ['panel-mapa', 'panel-primer', 'panel-segundo', 'panel-etico', 'panel-pdi', 'panel-rubrica'].forEach(id => {
+  ['panel-mapa', 'panel-primer', 'panel-segundo', 'panel-etico', 'panel-pdi', 'panel-rubrica', 'panel-docs', 'panel-secuencias', 'panel-anexo'].forEach(id => {
     const panel = document.getElementById(id);
     if (panel && panel.parentElement !== main) main.appendChild(panel);
   });
@@ -876,6 +1018,10 @@ function showRubrica(id, btn) {
 
 // ── SEARCH ───────────────────────────────────────────────────
 const ENTRIES = [
+  {tab:'docs',grade:null,subject:'Documentos complementarios',gradeLabel:'Materiales',keywords:'documentos complementarios materiales consulta recursos apoyo'},
+  {tab:'secuencias',grade:null,subject:'Secuencias didácticas',gradeLabel:'Propuestas',keywords:'secuencias didácticas propuestas aula actividades implementación'},
+  {tab:'anexo',grade:null,subject:'Anexo IA',gradeLabel:'Anexo',keywords:'anexo ia inteligencia artificial materiales asociados'},
+
   {tab:'primer',grade:'g1',subject:'Tecnologías, Diseño y Programación',gradeLabel:'1.° grado',keywords:'inteligencia artificial aplicaciones utilidades experimenta reconocimiento dibujos patrones reflexión procesos tecnológicos impacto vida personas recursos digitales experimentación'},
   {tab:'primer',grade:'g2',subject:'Tecnologías, Diseño y Programación',gradeLabel:'2.° grado',keywords:'automatización inteligencia artificial trabajo tareas repetitivas chatbots robots industriales reflexión procesos automatizados recursos digitales experimentación'},
   {tab:'primer',grade:'g3',subject:'Conocimiento del Mundo',gradeLabel:'3.° grado',keywords:'recursos digitales ia inteligencia artificial búsqueda información otras épocas experimentación reflexión crítica'},
@@ -923,8 +1069,8 @@ const ENTRIES = [
   {tab:'rubrica',grade:'r2',subject:'Usar IA en programación y robótica',gradeLabel:'Segundo Ciclo',keywords:'ia programación robótica diseño código evaluar críticamente asistente'},
 ];
 
-const TAB_LABELS = {primer:'Primer Ciclo',segundo:'Segundo Ciclo',etico:'Eje ético',pdi:'Eje Protección Digital',rubrica:'Rúbrica',mapa:'Mapa'};
-const TAB_COLORS = {primer:'badge-pur',segundo:'badge-tea',etico:'badge-amb',pdi:'badge-blu',rubrica:'badge-slate',mapa:'badge-blu'};
+const TAB_LABELS = {primer:'Primer Ciclo',segundo:'Segundo Ciclo',etico:'Eje ético',pdi:'Eje Protección Digital',rubrica:'Rúbrica',docs:'Documentos complementarios',secuencias:'Secuencias didácticas',anexo:'Anexo IA',mapa:'Mapa'};
+const TAB_COLORS = {primer:'badge-pur',segundo:'badge-tea',etico:'badge-amb',pdi:'badge-blu',rubrica:'badge-cor',docs:'badge-blu',secuencias:'badge-amb',anexo:'badge-cor',mapa:'badge-blu'};
 
 function escapeRe(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
 function hl(text, q){
