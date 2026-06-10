@@ -235,7 +235,7 @@
   .tab-btn[data-tab="segundo"].active,
   .tab-btn[data-tab="pdi"].active,
   .tab-btn[data-tab="docs"].active,
-  .tab-btn[data-tab="materiales"].active,
+  .tab-btn[data-tab="secuencias"].active,
   .tab-btn[data-tab="anexo"].active {
     background:var(--celeste);
     color:var(--azul-oscuro);
@@ -338,9 +338,9 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/></svg>
       Documentos complementarios
     </button>
-    <button class="tab-btn" data-tab="materiales" onclick="showTab('materiales',this)" role="tab">
+    <button class="tab-btn" data-tab="secuencias" onclick="showTab('secuencias',this)" role="tab">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6a2 2 0 0 1-2-1.5z"/><path d="M8 7h8"/><path d="M8 11h8"/></svg>
-      Materiales para el aula
+      Secuencias didácticas
     </button>
     <button class="tab-btn" data-tab="anexo" onclick="showTab('anexo',this)" role="tab">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="M5 8h14"/><path d="M7 16h10"/></svg>
@@ -937,8 +937,8 @@
     </div>
   </div>
 
-  <div class="panel" id="panel-materiales">
-    <p class="rubrica-intro">Aquí encontrarán secuencias didácticas, experiencias y cápsulas audiovisuales para abordar la IA en el aula.</p>
+  <div class="panel" id="panel-secuencias">
+    <p class="rubrica-intro">Espacio para organizar propuestas de enseñanza, recorridos de aula y actividades secuenciadas por ciclo o grado.</p>
 
     <div class="sub-nav no-print">
       <button class="sub-btn-seq active-seq-pc" onclick="showSecuencia('pc',this)">Primer Ciclo</button>
@@ -1001,7 +1001,7 @@ function normalizeMainPanels() {
   const main = document.querySelector('main');
   if (!main) return;
 
-  ['panel-mapa', 'panel-primer', 'panel-segundo', 'panel-etico', 'panel-pdi', 'panel-rubrica', 'panel-docs', 'panel-materiales', 'panel-anexo'].forEach(id => {
+  ['panel-mapa', 'panel-primer', 'panel-segundo', 'panel-etico', 'panel-pdi', 'panel-rubrica', 'panel-docs', 'panel-secuencias', 'panel-anexo'].forEach(id => {
     const panel = document.getElementById(id);
     if (panel && panel.parentElement !== main) main.appendChild(panel);
   });
@@ -1060,10 +1060,10 @@ function showRubrica(id, btn) {
   if (btn) btn.classList.add('active-' + id);
 }
 
-// ── MATERIALES PARA EL AULA CYCLE NAV ───────────────────────────────
+// ── SECUENCIAS DIDÁCTICAS CYCLE NAV ───────────────────────────────
 function showSecuencia(id, btn) {
-  document.querySelectorAll('#panel-materiales .sub-panel-seq').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('#panel-materiales .sub-btn-seq').forEach(b => b.classList.remove('active-seq-pc', 'active-seq-sc'));
+  document.querySelectorAll('#panel-secuencias .sub-panel-seq').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('#panel-secuencias .sub-btn-seq').forEach(b => b.classList.remove('active-seq-pc', 'active-seq-sc'));
   const target = document.getElementById('seq-' + id);
   if (target) target.classList.add('active');
   if (btn) btn.classList.add('active-seq-' + id);
@@ -1072,7 +1072,7 @@ function showSecuencia(id, btn) {
 // ── SEARCH ───────────────────────────────────────────────────
 const ENTRIES = [
   {tab:'docs',grade:null,subject:'Documentos complementarios',gradeLabel:'Materiales',keywords:'documentos complementarios materiales consulta recursos apoyo'},
-  {tab:'materiales',grade:null,subject:'Materiales para el aula',gradeLabel:'Propuestas',keywords:'secuencias didácticas propuestas aula actividades implementación'},
+  {tab:'secuencias',grade:null,subject:'Secuencias didácticas',gradeLabel:'Propuestas',keywords:'secuencias didácticas propuestas aula actividades implementación'},
   {tab:'anexo',grade:null,subject:'Anexo IA',gradeLabel:'Anexo',keywords:'anexo ia inteligencia artificial materiales asociados'},
 
   {tab:'primer',grade:'g1',subject:'Tecnologías, Diseño y Programación',gradeLabel:'1.° grado',keywords:'inteligencia artificial aplicaciones utilidades experimenta reconocimiento dibujos patrones reflexión procesos tecnológicos impacto vida personas recursos digitales experimentación'},
@@ -1122,7 +1122,7 @@ const ENTRIES = [
   {tab:'rubrica',grade:'r2',subject:'Usar IA en programación y robótica',gradeLabel:'Segundo Ciclo',keywords:'ia programación robótica diseño código evaluar críticamente asistente'},
 ];
 
-const TAB_LABELS = {primer:'Primer Ciclo',segundo:'Segundo Ciclo',etico:'Eje ético',pdi:'Eje Protección Digital',rubrica:'Rúbrica',docs:'Documentos complementarios',materiales:'Materiales para el aula',anexo:'Anexo IA',mapa:'Mapa'};
+const TAB_LABELS = {primer:'Primer Ciclo',segundo:'Segundo Ciclo',etico:'Eje ético',pdi:'Eje Protección Digital',rubrica:'Rúbrica',docs:'Documentos complementarios',secuencias:'Secuencias didácticas',anexo:'Anexo IA',mapa:'Mapa'};
 const TAB_COLORS = {primer:'badge-pur',segundo:'badge-tea',etico:'badge-amb',pdi:'badge-blu',rubrica:'badge-cor',docs:'badge-blu',secuencias:'badge-amb',anexo:'badge-cor',mapa:'badge-blu'};
 
 function escapeRe(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
